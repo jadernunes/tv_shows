@@ -10,12 +10,14 @@ import Foundation
 struct ShowDTO: Decodable {
     let id: Int
     let name: String
+    let language: String?
     let image: ShowImageDTO?
     
     var asShow: Show {
         Show(
             id: id,
             name: name,
+            language: language,
             image: image?.asShowImage)
     }
 }
