@@ -51,6 +51,19 @@
 		3E27D0492BBE4F5700726AB6 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0482BBE4F5700726AB6 /* Fonts.swift */; };
 		3E27D04B2BBE55D300726AB6 /* SearchResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D04A2BBE55D300726AB6 /* SearchResultDTO.swift */; };
 		3E27D04D2BBE5EE600726AB6 /* MessageRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D04C2BBE5EE600726AB6 /* MessageRetryView.swift */; };
+		3E27D0522BBE639A00726AB6 /* ShowDetailResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0512BBE639A00726AB6 /* ShowDetailResources.swift */; };
+		3E27D0542BBE63A500726AB6 /* ShowDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0532BBE63A500726AB6 /* ShowDetailService.swift */; };
+		3E27D0572BBE65A500726AB6 /* EpisodeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0562BBE65A500726AB6 /* EpisodeDTO.swift */; };
+		3E27D0592BBE662C00726AB6 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0582BBE662C00726AB6 /* Episode.swift */; };
+		3E27D05E2BBE670A00726AB6 /* ShowDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D05D2BBE670A00726AB6 /* ShowDetailCoordinator.swift */; };
+		3E27D0602BBE671400726AB6 /* ShowDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D05F2BBE671400726AB6 /* ShowDetailViewModel.swift */; };
+		3E27D0622BBE682E00726AB6 /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0612BBE682E00726AB6 /* ShowDetailViewController.swift */; };
+		3E27D0642BBE683800726AB6 /* ShowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0632BBE683800726AB6 /* ShowDetailView.swift */; };
+		3E27D0662BBE708400726AB6 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0652BBE708400726AB6 /* UINavigationController+Extension.swift */; };
+		3E27D0692BBECC3000726AB6 /* HTMLStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0682BBECC3000726AB6 /* HTMLStringView.swift */; };
+		3E27D06B2BBECC3700726AB6 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D06A2BBECC3700726AB6 /* WebView.swift */; };
+		3E27D06D2BBED2AF00726AB6 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D06C2BBED2AF00726AB6 /* Schedule.swift */; };
+		3E27D06F2BBED2C600726AB6 /* ScheduleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D06E2BBED2C600726AB6 /* ScheduleDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +124,19 @@
 		3E27D0482BBE4F5700726AB6 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3E27D04A2BBE55D300726AB6 /* SearchResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDTO.swift; sourceTree = "<group>"; };
 		3E27D04C2BBE5EE600726AB6 /* MessageRetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRetryView.swift; sourceTree = "<group>"; };
+		3E27D0512BBE639A00726AB6 /* ShowDetailResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailResources.swift; sourceTree = "<group>"; };
+		3E27D0532BBE63A500726AB6 /* ShowDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailService.swift; sourceTree = "<group>"; };
+		3E27D0562BBE65A500726AB6 /* EpisodeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDTO.swift; sourceTree = "<group>"; };
+		3E27D0582BBE662C00726AB6 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		3E27D05D2BBE670A00726AB6 /* ShowDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailCoordinator.swift; sourceTree = "<group>"; };
+		3E27D05F2BBE671400726AB6 /* ShowDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewModel.swift; sourceTree = "<group>"; };
+		3E27D0612BBE682E00726AB6 /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
+		3E27D0632BBE683800726AB6 /* ShowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailView.swift; sourceTree = "<group>"; };
+		3E27D0652BBE708400726AB6 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		3E27D0682BBECC3000726AB6 /* HTMLStringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLStringView.swift; sourceTree = "<group>"; };
+		3E27D06A2BBECC3700726AB6 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		3E27D06C2BBED2AF00726AB6 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		3E27D06E2BBED2C600726AB6 /* ScheduleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +237,7 @@
 			children = (
 				3E27CFE62BBE242200726AB6 /* App */,
 				3E27D01C2BBE378D00726AB6 /* ListShows */,
+				3E27D04E2BBE632E00726AB6 /* ShowDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -262,6 +289,7 @@
 				3E27D0082BBE286D00726AB6 /* JSONEncoder+Extension.swift */,
 				3E27D00A2BBE287C00726AB6 /* JSONDecoder+Extension.swift */,
 				3E27D00C2BBE288A00726AB6 /* DateFormatter+Extension.swift */,
+				3E27D0652BBE708400726AB6 /* UINavigationController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -336,6 +364,8 @@
 			children = (
 				3E27D0342BBE411800726AB6 /* Show.swift */,
 				3E27D03C2BBE487B00726AB6 /* ShowImage.swift */,
+				3E27D0582BBE662C00726AB6 /* Episode.swift */,
+				3E27D06C2BBED2AF00726AB6 /* Schedule.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -346,6 +376,7 @@
 				3E27D02A2BBE3D1600726AB6 /* ShowDTO.swift */,
 				3E27D03A2BBE482500726AB6 /* ShowImageDTO.swift */,
 				3E27D04A2BBE55D300726AB6 /* SearchResultDTO.swift */,
+				3E27D06E2BBED2C600726AB6 /* ScheduleDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,6 +384,7 @@
 		3E27D03E2BBE4A4000726AB6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3E27D0672BBECC2600726AB6 /* HTMLStringView */,
 				3E27D0412BBE4B6700726AB6 /* CacheAsyncImage */,
 				3E27D0442BBE4BC700726AB6 /* LoaderView.swift */,
 				3E27D04C2BBE5EE600726AB6 /* MessageRetryView.swift */,
@@ -367,6 +399,77 @@
 				3E27D0422BBE4B7900726AB6 /* CacheData.swift */,
 			);
 			path = CacheAsyncImage;
+			sourceTree = "<group>";
+		};
+		3E27D04E2BBE632E00726AB6 /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D04F2BBE636E00726AB6 /* Presentation */,
+				3E27D0502BBE637C00726AB6 /* Infrastructure */,
+			);
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		3E27D04F2BBE636E00726AB6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D05C2BBE66F500726AB6 /* View */,
+				3E27D05B2BBE66EE00726AB6 /* ViewModel */,
+				3E27D05A2BBE66E400726AB6 /* Coordinator */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3E27D0502BBE637C00726AB6 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D0552BBE658600726AB6 /* Models */,
+				3E27D0532BBE63A500726AB6 /* ShowDetailService.swift */,
+				3E27D0512BBE639A00726AB6 /* ShowDetailResources.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		3E27D0552BBE658600726AB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D0562BBE65A500726AB6 /* EpisodeDTO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3E27D05A2BBE66E400726AB6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D05D2BBE670A00726AB6 /* ShowDetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3E27D05B2BBE66EE00726AB6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D05F2BBE671400726AB6 /* ShowDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3E27D05C2BBE66F500726AB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D0632BBE683800726AB6 /* ShowDetailView.swift */,
+				3E27D0612BBE682E00726AB6 /* ShowDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E27D0672BBECC2600726AB6 /* HTMLStringView */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D0682BBECC3000726AB6 /* HTMLStringView.swift */,
+				3E27D06A2BBECC3700726AB6 /* WebView.swift */,
+			);
+			path = HTMLStringView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,8 +589,11 @@
 				3E27D0232BBE3AB800726AB6 /* ListShowsResources.swift in Sources */,
 				3E27D0252BBE3CAA00726AB6 /* ListShowsService.swift in Sources */,
 				3E27D0112BBE28C500726AB6 /* Config.swift in Sources */,
+				3E27D06D2BBED2AF00726AB6 /* Schedule.swift in Sources */,
+				3E27D0642BBE683800726AB6 /* ShowDetailView.swift in Sources */,
 				3E27D01B2BBE33F300726AB6 /* Colors.swift in Sources */,
 				3E27CFED2BBE24D200726AB6 /* AppCoordinator.swift in Sources */,
+				3E27D0622BBE682E00726AB6 /* ShowDetailViewController.swift in Sources */,
 				3E27D0072BBE285E00726AB6 /* Encodable+Extension.swift in Sources */,
 				3E27D0432BBE4B7900726AB6 /* CacheData.swift in Sources */,
 				3E27D02B2BBE3D1600726AB6 /* ShowDTO.swift in Sources */,
@@ -495,14 +601,19 @@
 				3E27D0402BBE4A4A00726AB6 /* CacheAsyncImage.swift in Sources */,
 				3E27D04B2BBE55D300726AB6 /* SearchResultDTO.swift in Sources */,
 				3E27D0312BBE401E00726AB6 /* ListShowsViewController.swift in Sources */,
+				3E27D06B2BBECC3700726AB6 /* WebView.swift in Sources */,
+				3E27D0662BBE708400726AB6 /* UINavigationController+Extension.swift in Sources */,
 				3E27CFFF2BBE276000726AB6 /* AlamofireAttributes.swift in Sources */,
 				3E27D00B2BBE287C00726AB6 /* JSONDecoder+Extension.swift in Sources */,
 				3E27D02D2BBE3E5500726AB6 /* ListShowsViewModel.swift in Sources */,
+				3E27D0602BBE671400726AB6 /* ShowDetailViewModel.swift in Sources */,
+				3E27D06F2BBED2C600726AB6 /* ScheduleDTO.swift in Sources */,
 				3E27CFFB2BBE272C00726AB6 /* NetworkSession.swift in Sources */,
 				3E27D0092BBE286D00726AB6 /* JSONEncoder+Extension.swift in Sources */,
 				3E27CFF02BBE24EA00726AB6 /* InitialFlow.swift in Sources */,
 				3E27D0352BBE411800726AB6 /* Show.swift in Sources */,
 				3E27CFEB2BBE24C100726AB6 /* SceneDelegate.swift in Sources */,
+				3E27D0542BBE63A500726AB6 /* ShowDetailService.swift in Sources */,
 				3E27D0192BBE2A5700726AB6 /* Localize.swift in Sources */,
 				3E27D0372BBE41BE00726AB6 /* ShowView.swift in Sources */,
 				3E27D0492BBE4F5700726AB6 /* Fonts.swift in Sources */,
@@ -511,10 +622,15 @@
 				3E27D0472BBE4C0B00726AB6 /* Images.swift in Sources */,
 				3E27D00F2BBE28AE00726AB6 /* DateFormatType.swift in Sources */,
 				3E27D03B2BBE482500726AB6 /* ShowImageDTO.swift in Sources */,
+				3E27D0692BBECC3000726AB6 /* HTMLStringView.swift in Sources */,
 				3E27D03D2BBE487B00726AB6 /* ShowImage.swift in Sources */,
+				3E27D05E2BBE670A00726AB6 /* ShowDetailCoordinator.swift in Sources */,
+				3E27D0592BBE662C00726AB6 /* Episode.swift in Sources */,
+				3E27D0522BBE639A00726AB6 /* ShowDetailResources.swift in Sources */,
 				3E27D00D2BBE288A00726AB6 /* DateFormatter+Extension.swift in Sources */,
 				3E27D0452BBE4BC700726AB6 /* LoaderView.swift in Sources */,
 				3E27D02F2BBE3FE600726AB6 /* ListShowsCoordinator.swift in Sources */,
+				3E27D0572BBE65A500726AB6 /* EpisodeDTO.swift in Sources */,
 				3E27D0392BBE428800726AB6 /* ListShowsState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

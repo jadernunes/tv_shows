@@ -49,6 +49,9 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
                                   imageSize: geo.size.width * 0.25)
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets())
+                        .onTapGesture {
+                            viewModel.selectedShow = show
+                        }
                         .task {
                             await viewModel.loadData(currentShow: show)
                         }

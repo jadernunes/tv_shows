@@ -7,7 +7,9 @@
 
 import UIKit
 
-protocol IListShowsCoordinator {}
+protocol IListShowsCoordinator {
+    func presentDetails(show: Show)
+}
 
 final class ListShowsCoordinator: IListShowsCoordinator {
 
@@ -27,5 +29,12 @@ final class ListShowsCoordinator: IListShowsCoordinator {
         let viewModel = ListShowsViewModel(coordinator: self)
         let viewController = ListShowsViewController(viewModel: viewModel)
         presenter?.viewControllers = [viewController]
+    }
+    
+    func presentDetails(show: Show) {
+        guard let navigation = presenter else { return }
+        
+        let coordinator = ShowDetailCoordinator(presenter: navigation)
+        coordinator.start(show: show)
     }
 }

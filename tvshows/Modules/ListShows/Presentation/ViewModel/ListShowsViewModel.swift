@@ -12,9 +12,11 @@ import SwiftUI
 protocol IListShowsViewModel: ObservableObject {
     var state: ListShowsState { get }
     var search: String { get set }
+    var selectedShow: Show? { get set }
 
     func shouldShowLoadMore(currentShow: Show) -> Bool
     func loadData(currentShow: Show?) async
+    func presentDetail(show: Show)
 }
 
 final class ListShowsViewModel: IListShowsViewModel {
@@ -23,6 +25,7 @@ final class ListShowsViewModel: IListShowsViewModel {
     
     @Published var state: ListShowsState = .idle
     @Published var search: String = ""
+    @Published var selectedShow: Show?
     
     private let coordinator: IListShowsCoordinator?
     private let service: IListShowsService
@@ -48,6 +51,7 @@ final class ListShowsViewModel: IListShowsViewModel {
         self.service = service
         
         bindSearchText()
+        bindSelectedShow()
     }
     
     // MARK: - Methods
@@ -75,6 +79,10 @@ final class ListShowsViewModel: IListShowsViewModel {
         
         return (isCurrentShowEqualToLast && isShowsNotEmpty) ||
                (isCurrentShowEqualToLast && isSearchNotEmpty)
+    }
+    
+    func presentDetail(show: Show) {
+        coordinator?.presentDetails(show: show)
     }
     
     @MainActor
@@ -161,6 +169,15 @@ final class ListShowsViewModel: IListShowsViewModel {
                         await self.requestSearch()
                     }
                 }
+            }
+            .store(in: &cancelables)
+    }
+    
+    private func bindSelectedShow() {
+        $selectedShow
+            .sink { [weak self] show in
+                guard let show else { return }
+                self?.coordinator?.presentDetails(show: show)
             }
             .store(in: &cancelables)
     }
