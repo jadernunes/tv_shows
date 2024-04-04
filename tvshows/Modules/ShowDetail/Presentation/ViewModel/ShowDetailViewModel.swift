@@ -8,10 +8,14 @@
 import SwiftUI
 
 protocol IShowDetailViewModel: ObservableObject {
+    var show: Show { get }
+    
     func loadData() async
 }
 
 final class ShowDetailViewModel: IShowDetailViewModel {
+    
+    @Published var show: Show
     
     // MARK: - Properties
     
@@ -20,8 +24,10 @@ final class ShowDetailViewModel: IShowDetailViewModel {
     
     // MARK: - Life cycle
     
-    init(coordinator: IShowDetailCoordinator? = nil,
+    init(show: Show,
+         coordinator: IShowDetailCoordinator? = nil,
          service: IShowDetailService = ShowDetailService()) {
+        self.show = show
         self.coordinator = coordinator
         self.service = service
     }

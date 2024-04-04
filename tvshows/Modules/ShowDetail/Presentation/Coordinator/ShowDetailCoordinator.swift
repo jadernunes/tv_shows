@@ -23,8 +23,8 @@ final class ShowDetailCoordinator: IShowDetailCoordinator {
 
     // MARK: - Methods
 
-    func start() {
-        let viewModel = ShowDetailViewModel(coordinator: self)
+    func start(show: Show) {
+        let viewModel = ShowDetailViewModel(show: show, coordinator: self)
         let viewController = ShowDetailViewController(viewModel: viewModel)
         presenter?.pushViewController(viewController, animated: true)
     }

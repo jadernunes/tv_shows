@@ -35,6 +35,6 @@ final class ListShowsCoordinator: IListShowsCoordinator {
         guard let navigation = presenter else { return }
         
         let coordinator = ShowDetailCoordinator(presenter: navigation)
-        coordinator.start()
+        coordinator.start(show: show)
     }
 }

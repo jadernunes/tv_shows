@@ -45,11 +45,11 @@ struct ShowView: View {
     
     // MARK: - Methods
     
-    private func imageWithStyle(image: Image) -> some View {
+    private func imageWithStyle(image: Image, contentMode: ContentMode = .fit) -> some View {
         image
             .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: imageSize, height: imageSize)
+            .aspectRatio(contentMode: contentMode)
+            .frame(width: imageSize, height: imageSize*1.5)
     }
 }
 
@@ -64,7 +64,7 @@ private extension ShowView {
                 case .empty:
                     LoaderView()
                 case .success(let image):
-                    imageWithStyle(image: image)
+                    imageWithStyle(image: image, contentMode: .fill)
                 case .failure:
                     imageWithStyle(image: Images.NoImage.image)
                 @unknown default:
@@ -80,6 +80,7 @@ private extension ShowView {
     var titleView: some View {
         Text(data.name)
             .lineLimit(2)
+            .font(Fonts.semibold16)
             .foregroundStyle(Colors.StrongGray.swiftUI)
             .padding(.bottom, 8)
     }
