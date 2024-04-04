@@ -29,6 +29,8 @@
 		3E27D00F2BBE28AE00726AB6 /* DateFormatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D00E2BBE28AE00726AB6 /* DateFormatType.swift */; };
 		3E27D0112BBE28C500726AB6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0102BBE28C500726AB6 /* Config.swift */; };
 		3E27D0132BBE28ED00726AB6 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E27D0122BBE28ED00726AB6 /* Config.plist */; };
+		3E27D0172BBE2A4900726AB6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E27D0152BBE2A4900726AB6 /* Localizable.strings */; };
+		3E27D0192BBE2A5700726AB6 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0182BBE2A5700726AB6 /* Localize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		3E27D00E2BBE28AE00726AB6 /* DateFormatType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatType.swift; sourceTree = "<group>"; };
 		3E27D0102BBE28C500726AB6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		3E27D0122BBE28ED00726AB6 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		3E27D0162BBE2A4900726AB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3E27D0182BBE2A5700726AB6 /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 		3E27CFE12BBE233700726AB6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3E27D0142BBE2A3300726AB6 /* Localize */,
 				3E27CFF32BBE25F500726AB6 /* LICENSE */,
 				3E27CFF42BBE25F500726AB6 /* README.md */,
 				3E27CFBA2BBE22AE00726AB6 /* Assets.xcassets */,
@@ -213,6 +218,15 @@
 				3E27D00C2BBE288A00726AB6 /* DateFormatter+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3E27D0142BBE2A3300726AB6 /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D0152BBE2A4900726AB6 /* Localizable.strings */,
+				3E27D0182BBE2A5700726AB6 /* Localize.swift */,
+			);
+			path = Localize;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E27CFF52BBE25F500726AB6 /* LICENSE in Resources */,
+				3E27D0172BBE2A4900726AB6 /* Localizable.strings in Resources */,
 				3E27CFF22BBE259C00726AB6 /* Launch Screen.storyboard in Resources */,
 				3E27CFF62BBE25F500726AB6 /* README.md in Resources */,
 				3E27D0132BBE28ED00726AB6 /* Config.plist in Resources */,
@@ -337,6 +352,7 @@
 				3E27D0092BBE286D00726AB6 /* JSONEncoder+Extension.swift in Sources */,
 				3E27CFF02BBE24EA00726AB6 /* InitialFlow.swift in Sources */,
 				3E27CFEB2BBE24C100726AB6 /* SceneDelegate.swift in Sources */,
+				3E27D0192BBE2A5700726AB6 /* Localize.swift in Sources */,
 				3E27CFFD2BBE273B00726AB6 /* HTTPStatusCode.swift in Sources */,
 				3E27D00F2BBE28AE00726AB6 /* DateFormatType.swift in Sources */,
 				3E27D00D2BBE288A00726AB6 /* DateFormatter+Extension.swift in Sources */,
@@ -360,6 +376,17 @@
 			targetProxy = 3E27CFC52BBE22AE00726AB6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3E27D0152BBE2A4900726AB6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E27D0162BBE2A4900726AB6 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3E27CFD62BBE22AE00726AB6 /* Debug */ = {
