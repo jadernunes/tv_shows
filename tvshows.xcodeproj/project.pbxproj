@@ -42,6 +42,8 @@
 		3E27D0352BBE411800726AB6 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0342BBE411800726AB6 /* Show.swift */; };
 		3E27D0372BBE41BE00726AB6 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0362BBE41BE00726AB6 /* ShowView.swift */; };
 		3E27D0392BBE428800726AB6 /* ListShowsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0382BBE428800726AB6 /* ListShowsState.swift */; };
+		3E27D03B2BBE482500726AB6 /* ShowImageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D03A2BBE482500726AB6 /* ShowImageDTO.swift */; };
+		3E27D03D2BBE487B00726AB6 /* ShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D03C2BBE487B00726AB6 /* ShowImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		3E27D0342BBE411800726AB6 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		3E27D0362BBE41BE00726AB6 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
 		3E27D0382BBE428800726AB6 /* ListShowsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsState.swift; sourceTree = "<group>"; };
+		3E27D03A2BBE482500726AB6 /* ShowImageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageDTO.swift; sourceTree = "<group>"; };
+		3E27D03C2BBE487B00726AB6 /* ShowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				3E27D0342BBE411800726AB6 /* Show.swift */,
+				3E27D03C2BBE487B00726AB6 /* ShowImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				3E27D02A2BBE3D1600726AB6 /* ShowDTO.swift */,
+				3E27D03A2BBE482500726AB6 /* ShowImageDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -461,6 +467,8 @@
 				3E27D0372BBE41BE00726AB6 /* ShowView.swift in Sources */,
 				3E27CFFD2BBE273B00726AB6 /* HTTPStatusCode.swift in Sources */,
 				3E27D00F2BBE28AE00726AB6 /* DateFormatType.swift in Sources */,
+				3E27D03B2BBE482500726AB6 /* ShowImageDTO.swift in Sources */,
+				3E27D03D2BBE487B00726AB6 /* ShowImage.swift in Sources */,
 				3E27D00D2BBE288A00726AB6 /* DateFormatter+Extension.swift in Sources */,
 				3E27D02F2BBE3FE600726AB6 /* ListShowsCoordinator.swift in Sources */,
 				3E27D0392BBE428800726AB6 /* ListShowsState.swift in Sources */,

@@ -10,5 +10,6 @@ import Foundation
 struct Show: Equatable {
     let id: Int
     let name: String
+    let image: ShowImage?
 }
 
