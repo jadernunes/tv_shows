@@ -11,3 +11,5 @@
 "genericErrorMessage" = "Something went wrong";
 "error.noInternet" = "No internet";
 "listShows.title" = "Series";
+"language.title" = "Language";
+"notMentioned" = "Not mentioned";
