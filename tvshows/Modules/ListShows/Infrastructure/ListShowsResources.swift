@@ -21,7 +21,7 @@ extension ListShowsResources: Requestable {
     var parameters: Params? {
         switch self {
         case let .loadAll(page):
-            var params: [String: Any] = [
+            let params: [String: Any] = [
                 "page": page
             ]
             

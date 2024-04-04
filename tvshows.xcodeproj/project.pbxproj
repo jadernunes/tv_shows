@@ -35,6 +35,13 @@
 		3E27D0232BBE3AB800726AB6 /* ListShowsResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0222BBE3AB800726AB6 /* ListShowsResources.swift */; };
 		3E27D0252BBE3CAA00726AB6 /* ListShowsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0242BBE3CAA00726AB6 /* ListShowsService.swift */; };
 		3E27D02B2BBE3D1600726AB6 /* ShowDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D02A2BBE3D1600726AB6 /* ShowDTO.swift */; };
+		3E27D02D2BBE3E5500726AB6 /* ListShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D02C2BBE3E5500726AB6 /* ListShowsViewModel.swift */; };
+		3E27D02F2BBE3FE600726AB6 /* ListShowsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D02E2BBE3FE600726AB6 /* ListShowsCoordinator.swift */; };
+		3E27D0312BBE401E00726AB6 /* ListShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0302BBE401E00726AB6 /* ListShowsViewController.swift */; };
+		3E27D0332BBE405B00726AB6 /* ListShowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0322BBE405B00726AB6 /* ListShowsView.swift */; };
+		3E27D0352BBE411800726AB6 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0342BBE411800726AB6 /* Show.swift */; };
+		3E27D0372BBE41BE00726AB6 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0362BBE41BE00726AB6 /* ShowView.swift */; };
+		3E27D0392BBE428800726AB6 /* ListShowsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0382BBE428800726AB6 /* ListShowsState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +86,13 @@
 		3E27D0222BBE3AB800726AB6 /* ListShowsResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsResources.swift; sourceTree = "<group>"; };
 		3E27D0242BBE3CAA00726AB6 /* ListShowsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsService.swift; sourceTree = "<group>"; };
 		3E27D02A2BBE3D1600726AB6 /* ShowDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDTO.swift; sourceTree = "<group>"; };
+		3E27D02C2BBE3E5500726AB6 /* ListShowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsViewModel.swift; sourceTree = "<group>"; };
+		3E27D02E2BBE3FE600726AB6 /* ListShowsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsCoordinator.swift; sourceTree = "<group>"; };
+		3E27D0302BBE401E00726AB6 /* ListShowsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsViewController.swift; sourceTree = "<group>"; };
+		3E27D0322BBE405B00726AB6 /* ListShowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsView.swift; sourceTree = "<group>"; };
+		3E27D0342BBE411800726AB6 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
+		3E27D0362BBE41BE00726AB6 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
+		3E27D0382BBE428800726AB6 /* ListShowsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +276,10 @@
 		3E27D01E2BBE381900726AB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3E27D0362BBE41BE00726AB6 /* ShowView.swift */,
+				3E27D0322BBE405B00726AB6 /* ListShowsView.swift */,
+				3E27D0302BBE401E00726AB6 /* ListShowsViewController.swift */,
+				3E27D0382BBE428800726AB6 /* ListShowsState.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -269,6 +287,7 @@
 		3E27D01F2BBE382100726AB6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3E27D02C2BBE3E5500726AB6 /* ListShowsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -276,6 +295,7 @@
 		3E27D0202BBE382A00726AB6 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				3E27D02E2BBE3FE600726AB6 /* ListShowsCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -293,16 +313,9 @@
 		3E27D0262BBE3CDA00726AB6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3E27D0272BBE3CF100726AB6 /* Show */,
+				3E27D0342BBE411800726AB6 /* Show.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		3E27D0272BBE3CF100726AB6 /* Show */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Show;
 			sourceTree = "<group>";
 		};
 		3E27D0292BBE3D0800726AB6 /* Models */ = {
@@ -425,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E27D0012BBE277000726AB6 /* NetworkErrorType.swift in Sources */,
+				3E27D0332BBE405B00726AB6 /* ListShowsView.swift in Sources */,
 				3E27CFF82BBE270200726AB6 /* Requestable.swift in Sources */,
 				3E27D0232BBE3AB800726AB6 /* ListShowsResources.swift in Sources */,
 				3E27D0252BBE3CAA00726AB6 /* ListShowsService.swift in Sources */,
@@ -434,16 +448,22 @@
 				3E27D0072BBE285E00726AB6 /* Encodable+Extension.swift in Sources */,
 				3E27D02B2BBE3D1600726AB6 /* ShowDTO.swift in Sources */,
 				3E27CFE92BBE248300726AB6 /* AppDelegate.swift in Sources */,
+				3E27D0312BBE401E00726AB6 /* ListShowsViewController.swift in Sources */,
 				3E27CFFF2BBE276000726AB6 /* AlamofireAttributes.swift in Sources */,
 				3E27D00B2BBE287C00726AB6 /* JSONDecoder+Extension.swift in Sources */,
+				3E27D02D2BBE3E5500726AB6 /* ListShowsViewModel.swift in Sources */,
 				3E27CFFB2BBE272C00726AB6 /* NetworkSession.swift in Sources */,
 				3E27D0092BBE286D00726AB6 /* JSONEncoder+Extension.swift in Sources */,
 				3E27CFF02BBE24EA00726AB6 /* InitialFlow.swift in Sources */,
+				3E27D0352BBE411800726AB6 /* Show.swift in Sources */,
 				3E27CFEB2BBE24C100726AB6 /* SceneDelegate.swift in Sources */,
 				3E27D0192BBE2A5700726AB6 /* Localize.swift in Sources */,
+				3E27D0372BBE41BE00726AB6 /* ShowView.swift in Sources */,
 				3E27CFFD2BBE273B00726AB6 /* HTTPStatusCode.swift in Sources */,
 				3E27D00F2BBE28AE00726AB6 /* DateFormatType.swift in Sources */,
 				3E27D00D2BBE288A00726AB6 /* DateFormatter+Extension.swift in Sources */,
+				3E27D02F2BBE3FE600726AB6 /* ListShowsCoordinator.swift in Sources */,
+				3E27D0392BBE428800726AB6 /* ListShowsState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,8 +625,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tvshows/Targets/tvshows/Info.plist;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
@@ -646,8 +664,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tvshows/Targets/tvshows/Info.plist;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;

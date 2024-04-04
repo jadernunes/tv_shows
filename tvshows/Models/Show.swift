@@ -1,5 +1,5 @@
 //
-//  ShowDTO.swift
+//  Show.swift
 //  tvshows
 //
 //  Created by Jader Borba Nunes on 03/04/24.
@@ -7,11 +7,8 @@
 
 import Foundation
 
-struct ShowDTO: Decodable {
+struct Show: Equatable {
     let id: Int
     let name: String
-    
-    var asShow: Show {
-        Show(id: id, name: name)
-    }
 }
+

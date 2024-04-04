@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IListShowsService {
-    func loadAll(page: Int) async throws -> ShowDTO
+    func loadAll(page: Int) async throws -> [ShowDTO]
 }
 
 struct ListShowsService: IListShowsService {
@@ -25,7 +25,7 @@ struct ListShowsService: IListShowsService {
     
     // MARK: - Methods
     
-    func loadAll(page: Int) async throws -> ShowDTO {
+    func loadAll(page: Int) async throws -> [ShowDTO] {
         try await network
             .makeRequest(requester: ListShowsResources
                 .loadAll(page: page)
