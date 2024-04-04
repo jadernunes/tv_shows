@@ -33,6 +33,11 @@ final class AppCoordinator {
     // MARK: - Navigations
 
     private func openListShows() {
-        // TODO: handle openListShows
+        let navigation = UINavigationController()
+        let coodinator = ListShowsCoordinator(presenter: navigation)
+        coodinator.start()
+
+        window?.rootViewController = navigation
+        window?.makeKeyAndVisible()
     }
 }

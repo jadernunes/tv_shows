@@ -31,6 +31,19 @@
 		3E27D0132BBE28ED00726AB6 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E27D0122BBE28ED00726AB6 /* Config.plist */; };
 		3E27D0172BBE2A4900726AB6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E27D0152BBE2A4900726AB6 /* Localizable.strings */; };
 		3E27D0192BBE2A5700726AB6 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0182BBE2A5700726AB6 /* Localize.swift */; };
+		3E27D01B2BBE33F300726AB6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D01A2BBE33F300726AB6 /* Colors.swift */; };
+		3E27D0232BBE3AB800726AB6 /* ListShowsResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0222BBE3AB800726AB6 /* ListShowsResources.swift */; };
+		3E27D0252BBE3CAA00726AB6 /* ListShowsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0242BBE3CAA00726AB6 /* ListShowsService.swift */; };
+		3E27D02B2BBE3D1600726AB6 /* ShowDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D02A2BBE3D1600726AB6 /* ShowDTO.swift */; };
+		3E27D02D2BBE3E5500726AB6 /* ListShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D02C2BBE3E5500726AB6 /* ListShowsViewModel.swift */; };
+		3E27D02F2BBE3FE600726AB6 /* ListShowsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D02E2BBE3FE600726AB6 /* ListShowsCoordinator.swift */; };
+		3E27D0312BBE401E00726AB6 /* ListShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0302BBE401E00726AB6 /* ListShowsViewController.swift */; };
+		3E27D0332BBE405B00726AB6 /* ListShowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0322BBE405B00726AB6 /* ListShowsView.swift */; };
+		3E27D0352BBE411800726AB6 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0342BBE411800726AB6 /* Show.swift */; };
+		3E27D0372BBE41BE00726AB6 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0362BBE41BE00726AB6 /* ShowView.swift */; };
+		3E27D0392BBE428800726AB6 /* ListShowsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0382BBE428800726AB6 /* ListShowsState.swift */; };
+		3E27D03B2BBE482500726AB6 /* ShowImageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D03A2BBE482500726AB6 /* ShowImageDTO.swift */; };
+		3E27D03D2BBE487B00726AB6 /* ShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D03C2BBE487B00726AB6 /* ShowImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +84,19 @@
 		3E27D0122BBE28ED00726AB6 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		3E27D0162BBE2A4900726AB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E27D0182BBE2A5700726AB6 /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
+		3E27D01A2BBE33F300726AB6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3E27D0222BBE3AB800726AB6 /* ListShowsResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsResources.swift; sourceTree = "<group>"; };
+		3E27D0242BBE3CAA00726AB6 /* ListShowsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsService.swift; sourceTree = "<group>"; };
+		3E27D02A2BBE3D1600726AB6 /* ShowDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDTO.swift; sourceTree = "<group>"; };
+		3E27D02C2BBE3E5500726AB6 /* ListShowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsViewModel.swift; sourceTree = "<group>"; };
+		3E27D02E2BBE3FE600726AB6 /* ListShowsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsCoordinator.swift; sourceTree = "<group>"; };
+		3E27D0302BBE401E00726AB6 /* ListShowsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsViewController.swift; sourceTree = "<group>"; };
+		3E27D0322BBE405B00726AB6 /* ListShowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsView.swift; sourceTree = "<group>"; };
+		3E27D0342BBE411800726AB6 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
+		3E27D0362BBE41BE00726AB6 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
+		3E27D0382BBE428800726AB6 /* ListShowsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsState.swift; sourceTree = "<group>"; };
+		3E27D03A2BBE482500726AB6 /* ShowImageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageDTO.swift; sourceTree = "<group>"; };
+		3E27D03C2BBE487B00726AB6 /* ShowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +144,7 @@
 				3E27CFF92BBE270600726AB6 /* Network */,
 				3E27CFE32BBE238300726AB6 /* Targets */,
 				3E27CFE12BBE233700726AB6 /* Resources */,
+				3E27D0262BBE3CDA00726AB6 /* Models */,
 				3E27CFE52BBE241500726AB6 /* Modules */,
 			);
 			path = tvshows;
@@ -140,6 +167,7 @@
 				3E27CFBA2BBE22AE00726AB6 /* Assets.xcassets */,
 				3E27CFBC2BBE22AE00726AB6 /* tvshows.entitlements */,
 				3E27CFF12BBE259C00726AB6 /* Launch Screen.storyboard */,
+				3E27D01A2BBE33F300726AB6 /* Colors.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -165,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				3E27CFE62BBE242200726AB6 /* App */,
+				3E27D01C2BBE378D00726AB6 /* ListShows */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -227,6 +256,80 @@
 				3E27D0182BBE2A5700726AB6 /* Localize.swift */,
 			);
 			path = Localize;
+			sourceTree = "<group>";
+		};
+		3E27D01C2BBE378D00726AB6 /* ListShows */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D01D2BBE37A700726AB6 /* Presentation */,
+				3E27D0212BBE383400726AB6 /* Infrastructure */,
+			);
+			path = ListShows;
+			sourceTree = "<group>";
+		};
+		3E27D01D2BBE37A700726AB6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D01E2BBE381900726AB6 /* View */,
+				3E27D01F2BBE382100726AB6 /* ViewModel */,
+				3E27D0202BBE382A00726AB6 /* Coordinator */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3E27D01E2BBE381900726AB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D0362BBE41BE00726AB6 /* ShowView.swift */,
+				3E27D0322BBE405B00726AB6 /* ListShowsView.swift */,
+				3E27D0302BBE401E00726AB6 /* ListShowsViewController.swift */,
+				3E27D0382BBE428800726AB6 /* ListShowsState.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E27D01F2BBE382100726AB6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D02C2BBE3E5500726AB6 /* ListShowsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3E27D0202BBE382A00726AB6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D02E2BBE3FE600726AB6 /* ListShowsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3E27D0212BBE383400726AB6 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D0292BBE3D0800726AB6 /* Models */,
+				3E27D0242BBE3CAA00726AB6 /* ListShowsService.swift */,
+				3E27D0222BBE3AB800726AB6 /* ListShowsResources.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		3E27D0262BBE3CDA00726AB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D0342BBE411800726AB6 /* Show.swift */,
+				3E27D03C2BBE487B00726AB6 /* ShowImage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3E27D0292BBE3D0800726AB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3E27D02A2BBE3D1600726AB6 /* ShowDTO.swift */,
+				3E27D03A2BBE482500726AB6 /* ShowImageDTO.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,21 +444,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E27D0012BBE277000726AB6 /* NetworkErrorType.swift in Sources */,
+				3E27D0332BBE405B00726AB6 /* ListShowsView.swift in Sources */,
 				3E27CFF82BBE270200726AB6 /* Requestable.swift in Sources */,
+				3E27D0232BBE3AB800726AB6 /* ListShowsResources.swift in Sources */,
+				3E27D0252BBE3CAA00726AB6 /* ListShowsService.swift in Sources */,
 				3E27D0112BBE28C500726AB6 /* Config.swift in Sources */,
+				3E27D01B2BBE33F300726AB6 /* Colors.swift in Sources */,
 				3E27CFED2BBE24D200726AB6 /* AppCoordinator.swift in Sources */,
 				3E27D0072BBE285E00726AB6 /* Encodable+Extension.swift in Sources */,
+				3E27D02B2BBE3D1600726AB6 /* ShowDTO.swift in Sources */,
 				3E27CFE92BBE248300726AB6 /* AppDelegate.swift in Sources */,
+				3E27D0312BBE401E00726AB6 /* ListShowsViewController.swift in Sources */,
 				3E27CFFF2BBE276000726AB6 /* AlamofireAttributes.swift in Sources */,
 				3E27D00B2BBE287C00726AB6 /* JSONDecoder+Extension.swift in Sources */,
+				3E27D02D2BBE3E5500726AB6 /* ListShowsViewModel.swift in Sources */,
 				3E27CFFB2BBE272C00726AB6 /* NetworkSession.swift in Sources */,
 				3E27D0092BBE286D00726AB6 /* JSONEncoder+Extension.swift in Sources */,
 				3E27CFF02BBE24EA00726AB6 /* InitialFlow.swift in Sources */,
+				3E27D0352BBE411800726AB6 /* Show.swift in Sources */,
 				3E27CFEB2BBE24C100726AB6 /* SceneDelegate.swift in Sources */,
 				3E27D0192BBE2A5700726AB6 /* Localize.swift in Sources */,
+				3E27D0372BBE41BE00726AB6 /* ShowView.swift in Sources */,
 				3E27CFFD2BBE273B00726AB6 /* HTTPStatusCode.swift in Sources */,
 				3E27D00F2BBE28AE00726AB6 /* DateFormatType.swift in Sources */,
+				3E27D03B2BBE482500726AB6 /* ShowImageDTO.swift in Sources */,
+				3E27D03D2BBE487B00726AB6 /* ShowImage.swift in Sources */,
 				3E27D00D2BBE288A00726AB6 /* DateFormatter+Extension.swift in Sources */,
+				3E27D02F2BBE3FE600726AB6 /* ListShowsCoordinator.swift in Sources */,
+				3E27D0392BBE428800726AB6 /* ListShowsState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,8 +633,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tvshows/Targets/tvshows/Info.plist;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
@@ -558,8 +672,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tvshows/Targets/tvshows/Info.plist;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
