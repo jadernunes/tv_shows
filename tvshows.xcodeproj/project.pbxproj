@@ -50,6 +50,7 @@
 		3E27D0472BBE4C0B00726AB6 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0462BBE4C0B00726AB6 /* Images.swift */; };
 		3E27D0492BBE4F5700726AB6 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0482BBE4F5700726AB6 /* Fonts.swift */; };
 		3E27D04B2BBE55D300726AB6 /* SearchResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D04A2BBE55D300726AB6 /* SearchResultDTO.swift */; };
+		3E27D04D2BBE5EE600726AB6 /* MessageRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D04C2BBE5EE600726AB6 /* MessageRetryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		3E27D0462BBE4C0B00726AB6 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		3E27D0482BBE4F5700726AB6 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3E27D04A2BBE55D300726AB6 /* SearchResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDTO.swift; sourceTree = "<group>"; };
+		3E27D04C2BBE5EE600726AB6 /* MessageRetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRetryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +355,7 @@
 			children = (
 				3E27D0412BBE4B6700726AB6 /* CacheAsyncImage */,
 				3E27D0442BBE4BC700726AB6 /* LoaderView.swift */,
+				3E27D04C2BBE5EE600726AB6 /* MessageRetryView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				3E27D0372BBE41BE00726AB6 /* ShowView.swift in Sources */,
 				3E27D0492BBE4F5700726AB6 /* Fonts.swift in Sources */,
 				3E27CFFD2BBE273B00726AB6 /* HTTPStatusCode.swift in Sources */,
+				3E27D04D2BBE5EE600726AB6 /* MessageRetryView.swift in Sources */,
 				3E27D0472BBE4C0B00726AB6 /* Images.swift in Sources */,
 				3E27D00F2BBE28AE00726AB6 /* DateFormatType.swift in Sources */,
 				3E27D03B2BBE482500726AB6 /* ShowImageDTO.swift in Sources */,
