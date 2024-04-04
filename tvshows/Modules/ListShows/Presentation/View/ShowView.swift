@@ -49,6 +49,7 @@ struct ShowView: View {
         image
             .resizable()
             .aspectRatio(contentMode: .fill)
+            .frame(width: imageSize, height: imageSize)
     }
 }
 
@@ -70,7 +71,6 @@ private extension ShowView {
                     EmptyView()
                 }
             }
-            .frame(width: imageSize, height: imageSize)
             .cornerRadius(8)
         } else {
             imageWithStyle(image: Images.NoImage.image)

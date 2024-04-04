@@ -49,6 +49,7 @@
 		3E27D0452BBE4BC700726AB6 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0442BBE4BC700726AB6 /* LoaderView.swift */; };
 		3E27D0472BBE4C0B00726AB6 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0462BBE4C0B00726AB6 /* Images.swift */; };
 		3E27D0492BBE4F5700726AB6 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0482BBE4F5700726AB6 /* Fonts.swift */; };
+		3E27D04B2BBE55D300726AB6 /* SearchResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D04A2BBE55D300726AB6 /* SearchResultDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		3E27D0442BBE4BC700726AB6 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		3E27D0462BBE4C0B00726AB6 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		3E27D0482BBE4F5700726AB6 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		3E27D04A2BBE55D300726AB6 /* SearchResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +343,7 @@
 			children = (
 				3E27D02A2BBE3D1600726AB6 /* ShowDTO.swift */,
 				3E27D03A2BBE482500726AB6 /* ShowImageDTO.swift */,
+				3E27D04A2BBE55D300726AB6 /* SearchResultDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				3E27D02B2BBE3D1600726AB6 /* ShowDTO.swift in Sources */,
 				3E27CFE92BBE248300726AB6 /* AppDelegate.swift in Sources */,
 				3E27D0402BBE4A4A00726AB6 /* CacheAsyncImage.swift in Sources */,
+				3E27D04B2BBE55D300726AB6 /* SearchResultDTO.swift in Sources */,
 				3E27D0312BBE401E00726AB6 /* ListShowsViewController.swift in Sources */,
 				3E27CFFF2BBE276000726AB6 /* AlamofireAttributes.swift in Sources */,
 				3E27D00B2BBE287C00726AB6 /* JSONDecoder+Extension.swift in Sources */,

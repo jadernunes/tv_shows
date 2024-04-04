@@ -59,6 +59,7 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
                 .refreshable {
                     await viewModel.loadData(currentShow: nil)
                 }
+                .searchable(text: $viewModel.search)
             }
         }
     }
