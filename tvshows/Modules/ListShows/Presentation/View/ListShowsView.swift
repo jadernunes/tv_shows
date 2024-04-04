@@ -52,6 +52,8 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
                         }
                     }
                 }
+                .navigationTitle(Localize.string(key: "listShows.title"))
+                .navigationBarTitleDisplayMode(.inline)
                 .listStyle(.plain)
                 .frame(maxWidth: .infinity)
                 .refreshable {
@@ -59,12 +61,11 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
                 }
             }
         }
-        .navigationTitle(Localize.string(key: "listShows.title"))
     }
     
     private var loadingView: some View {
         VStack(alignment: .center) {
-            EmptyView() // TODO: Handle it
+            LoaderView()
         }
         .frame(maxWidth: .infinity)
     }
