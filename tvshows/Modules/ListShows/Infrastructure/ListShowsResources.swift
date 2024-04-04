@@ -7,13 +7,14 @@
 
 enum ListShowsResources {
     case loadAll(page: Int)
+    case search(text: String)
 }
 
 extension ListShowsResources: Requestable {
     
     var method: HTTPMethodType {
         switch self {
-        case .loadAll:
+        case .loadAll, .search:
             return .get
         }
     }
@@ -26,6 +27,12 @@ extension ListShowsResources: Requestable {
             ]
             
             return params
+        case let .search(text):
+            let params: [String: Any] = [
+                "q": text
+            ]
+            
+            return params
         }
     }
     
@@ -33,6 +40,8 @@ extension ListShowsResources: Requestable {
         switch self {
         case .loadAll:
             return "/shows"
+        case .search:
+            return "/search/shows"
         }
     }
 }
