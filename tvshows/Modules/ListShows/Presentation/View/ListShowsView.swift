@@ -22,11 +22,17 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
     var body: some View {
         switch viewModel.state {
         case .empty:
-            EmptyView() // TODO: Handle it
+            MessageRetryView(imageName: "noData", message: Localize.string(key: "noData"))
+                .onRetry {
+                    await viewModel.loadData(currentShow: nil)
+                }
         case .loading:
             loadingView
         case .error:
-            EmptyView() // TODO: Handle it
+            MessageRetryView(imageName: "error", message: Localize.string(key: "genericErrorMessage"))
+                .onRetry {
+                    await viewModel.loadData(currentShow: nil)
+                }
         case let .ready(shows):
             loadContent(shows)
         default:

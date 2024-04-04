@@ -13,3 +13,5 @@
 "listShows.title" = "Series";
 "language.title" = "Language";
 "notMentioned" = "Not mentioned";
+"retry" = "Retry";
+"noData" = "No data";
