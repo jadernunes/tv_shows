@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  tvshows
+
+  Created by Jader Borba Nunes on 03/04/24.
+  
+*/
+
+// MARK: - General
+
+"genericErrorMessage" = "Something went wrong";
+"error.noInternet" = "No internet";
