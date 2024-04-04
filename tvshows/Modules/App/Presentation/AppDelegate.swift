@@ -12,7 +12,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: Colors.StrongGray.uikit ]
+        setUpNavigationStyle()
         return true
     }
 
@@ -22,5 +22,10 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
                      configurationForConnecting connectingSceneSession: UISceneSession,
                      options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+    
+    private func setUpNavigationStyle() {
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: Colors.StrongGray.uikit ]
+        UINavigationBar.appearance().tintColor = Colors.StrongGray.uikit
     }
 }
