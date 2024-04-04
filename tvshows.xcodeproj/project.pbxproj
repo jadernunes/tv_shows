@@ -31,6 +31,7 @@
 		3E27D0132BBE28ED00726AB6 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E27D0122BBE28ED00726AB6 /* Config.plist */; };
 		3E27D0172BBE2A4900726AB6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E27D0152BBE2A4900726AB6 /* Localizable.strings */; };
 		3E27D0192BBE2A5700726AB6 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0182BBE2A5700726AB6 /* Localize.swift */; };
+		3E27D01B2BBE33F300726AB6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D01A2BBE33F300726AB6 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		3E27D0122BBE28ED00726AB6 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		3E27D0162BBE2A4900726AB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E27D0182BBE2A5700726AB6 /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
+		3E27D01A2BBE33F300726AB6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				3E27CFBA2BBE22AE00726AB6 /* Assets.xcassets */,
 				3E27CFBC2BBE22AE00726AB6 /* tvshows.entitlements */,
 				3E27CFF12BBE259C00726AB6 /* Launch Screen.storyboard */,
+				3E27D01A2BBE33F300726AB6 /* Colors.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				3E27D0012BBE277000726AB6 /* NetworkErrorType.swift in Sources */,
 				3E27CFF82BBE270200726AB6 /* Requestable.swift in Sources */,
 				3E27D0112BBE28C500726AB6 /* Config.swift in Sources */,
+				3E27D01B2BBE33F300726AB6 /* Colors.swift in Sources */,
 				3E27CFED2BBE24D200726AB6 /* AppCoordinator.swift in Sources */,
 				3E27D0072BBE285E00726AB6 /* Encodable+Extension.swift in Sources */,
 				3E27CFE92BBE248300726AB6 /* AppDelegate.swift in Sources */,

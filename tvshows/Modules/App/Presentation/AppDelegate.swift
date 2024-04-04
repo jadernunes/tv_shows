@@ -12,7 +12,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        true
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: Colors.StrongGray.uikit ]
+        return true
     }
 
     // MARK: - UISceneSession Life cycle
