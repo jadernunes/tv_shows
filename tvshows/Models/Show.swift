@@ -13,5 +13,7 @@ struct Show: Equatable {
     let language: String?
     let image: ShowImage?
     let summary: String?
+    let schedule: Schedule?
+    let genres: [String]?
 }
 

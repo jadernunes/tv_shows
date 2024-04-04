@@ -13,6 +13,8 @@ struct ShowDTO: Decodable {
     let language: String?
     let image: ShowImageDTO?
     let summary: String?
+    let schedule: ScheduleDTO?
+    let genres: [String]?
     
     var asShow: Show {
         Show(
@@ -20,6 +22,8 @@ struct ShowDTO: Decodable {
             name: name,
             language: language,
             image: image?.asShowImage,
-            summary: summary)
+            summary: summary,
+            schedule: schedule?.asSchedule,
+            genres: genres)
     }
 }
