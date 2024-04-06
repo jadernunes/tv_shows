@@ -12,7 +12,8 @@ struct EpisodeDTO:  Decodable {
     let name: String
     let season: Int
     let number: Int
-    let summary: String
+    let summary: String?
+    let image: ShowImageDTO?
     
     var asEpisode: Episode {
         Episode(
@@ -20,6 +21,7 @@ struct EpisodeDTO:  Decodable {
             name: name,
             season: season,
             number: number,
-            summary: summary)
+            summary: summary,
+            image: image?.asShowImage)
     }
 }

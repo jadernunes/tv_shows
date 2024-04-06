@@ -62,11 +62,13 @@ private extension ShowView {
             CacheAsyncImage(url: url) { phase in
                 switch phase {
                 case .empty:
-                    LoaderView()
+                    LoaderView(size: .small)
+                        .frame(width: imageSize, height: imageSize*1.5)
                 case .success(let image):
                     imageWithStyle(image: image, contentMode: .fill)
                 case .failure:
                     imageWithStyle(image: Images.NoImage.image)
+                        .frame(width: imageSize, height: imageSize*1.5)
                 @unknown default:
                     EmptyView()
                 }
@@ -74,6 +76,7 @@ private extension ShowView {
             .cornerRadius(8)
         } else {
             imageWithStyle(image: Images.NoImage.image)
+                .frame(width: imageSize, height: imageSize*1.5)
         }
     }
     
@@ -89,10 +92,10 @@ private extension ShowView {
     var languageView: some View {
         HStack {
             Text(Localize.string(key: "language.title") + ": ")
-                .font(Fonts.regular12)
+                .font(Fonts.bold12)
                 .foregroundStyle(Colors.MediumGray.swiftUI)
             Text(languageText)
-                .font(Fonts.thin12)
+                .font(Fonts.regular12)
                 .foregroundStyle(Colors.MediumGray.swiftUI)
                 .lineLimit(2)
         }

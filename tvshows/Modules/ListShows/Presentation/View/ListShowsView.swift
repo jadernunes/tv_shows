@@ -27,7 +27,7 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
                     await viewModel.loadData(currentShow: nil)
                 }
         case .loading:
-            loadingView
+            LoaderView()
         case .error:
             MessageRetryView(imageName: "error", message: Localize.string(key: "genericErrorMessage"))
                 .onRetry {
@@ -57,7 +57,7 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
                         }
                         
                         if viewModel.shouldShowLoadMore(currentShow: show) {
-                            loadingView
+                            LoaderView()
                         }
                     }
                 }
@@ -71,12 +71,5 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
                 .searchable(text: $viewModel.search)
             }
         }
-    }
-    
-    private var loadingView: some View {
-        VStack(alignment: .center) {
-            LoaderView()
-        }
-        .frame(maxWidth: .infinity)
     }
 }
