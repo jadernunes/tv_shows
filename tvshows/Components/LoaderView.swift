@@ -9,8 +9,20 @@ import SwiftUI
 
 struct LoaderView: View {
     
+    let size: ControlSize
+    
+    init(size: ControlSize = .large) {
+        self.size = size
+    }
+    
     var body: some View {
-        ProgressView()
-            .controlSize(.large)
+        HStack {
+            VStack(alignment: .center) {
+                ProgressView()
+                    .controlSize(size)
+            }
+            .frame(maxHeight: .infinity, alignment: .center)
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 }

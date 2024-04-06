@@ -60,10 +60,9 @@
 		3E27D0622BBE682E00726AB6 /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0612BBE682E00726AB6 /* ShowDetailViewController.swift */; };
 		3E27D0642BBE683800726AB6 /* ShowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0632BBE683800726AB6 /* ShowDetailView.swift */; };
 		3E27D0662BBE708400726AB6 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0652BBE708400726AB6 /* UINavigationController+Extension.swift */; };
-		3E27D0692BBECC3000726AB6 /* HTMLStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0682BBECC3000726AB6 /* HTMLStringView.swift */; };
-		3E27D06B2BBECC3700726AB6 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D06A2BBECC3700726AB6 /* WebView.swift */; };
 		3E27D06D2BBED2AF00726AB6 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D06C2BBED2AF00726AB6 /* Schedule.swift */; };
 		3E27D06F2BBED2C600726AB6 /* ScheduleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D06E2BBED2C600726AB6 /* ScheduleDTO.swift */; };
+		3E27D0712BC0D63900726AB6 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27D0702BC0D63900726AB6 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,10 +132,9 @@
 		3E27D0612BBE682E00726AB6 /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
 		3E27D0632BBE683800726AB6 /* ShowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailView.swift; sourceTree = "<group>"; };
 		3E27D0652BBE708400726AB6 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
-		3E27D0682BBECC3000726AB6 /* HTMLStringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLStringView.swift; sourceTree = "<group>"; };
-		3E27D06A2BBECC3700726AB6 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		3E27D06C2BBED2AF00726AB6 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		3E27D06E2BBED2C600726AB6 /* ScheduleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDTO.swift; sourceTree = "<group>"; };
+		3E27D0702BC0D63900726AB6 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +288,7 @@
 				3E27D00A2BBE287C00726AB6 /* JSONDecoder+Extension.swift */,
 				3E27D00C2BBE288A00726AB6 /* DateFormatter+Extension.swift */,
 				3E27D0652BBE708400726AB6 /* UINavigationController+Extension.swift */,
+				3E27D0702BC0D63900726AB6 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -384,7 +383,6 @@
 		3E27D03E2BBE4A4000726AB6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3E27D0672BBECC2600726AB6 /* HTMLStringView */,
 				3E27D0412BBE4B6700726AB6 /* CacheAsyncImage */,
 				3E27D0442BBE4BC700726AB6 /* LoaderView.swift */,
 				3E27D04C2BBE5EE600726AB6 /* MessageRetryView.swift */,
@@ -461,15 +459,6 @@
 				3E27D0612BBE682E00726AB6 /* ShowDetailViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		3E27D0672BBECC2600726AB6 /* HTMLStringView */ = {
-			isa = PBXGroup;
-			children = (
-				3E27D0682BBECC3000726AB6 /* HTMLStringView.swift */,
-				3E27D06A2BBECC3700726AB6 /* WebView.swift */,
-			);
-			path = HTMLStringView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,9 +588,9 @@
 				3E27D02B2BBE3D1600726AB6 /* ShowDTO.swift in Sources */,
 				3E27CFE92BBE248300726AB6 /* AppDelegate.swift in Sources */,
 				3E27D0402BBE4A4A00726AB6 /* CacheAsyncImage.swift in Sources */,
+				3E27D0712BC0D63900726AB6 /* String+Extension.swift in Sources */,
 				3E27D04B2BBE55D300726AB6 /* SearchResultDTO.swift in Sources */,
 				3E27D0312BBE401E00726AB6 /* ListShowsViewController.swift in Sources */,
-				3E27D06B2BBECC3700726AB6 /* WebView.swift in Sources */,
 				3E27D0662BBE708400726AB6 /* UINavigationController+Extension.swift in Sources */,
 				3E27CFFF2BBE276000726AB6 /* AlamofireAttributes.swift in Sources */,
 				3E27D00B2BBE287C00726AB6 /* JSONDecoder+Extension.swift in Sources */,
@@ -622,7 +611,6 @@
 				3E27D0472BBE4C0B00726AB6 /* Images.swift in Sources */,
 				3E27D00F2BBE28AE00726AB6 /* DateFormatType.swift in Sources */,
 				3E27D03B2BBE482500726AB6 /* ShowImageDTO.swift in Sources */,
-				3E27D0692BBECC3000726AB6 /* HTMLStringView.swift in Sources */,
 				3E27D03D2BBE487B00726AB6 /* ShowImage.swift in Sources */,
 				3E27D05E2BBE670A00726AB6 /* ShowDetailCoordinator.swift in Sources */,
 				3E27D0592BBE662C00726AB6 /* Episode.swift in Sources */,
