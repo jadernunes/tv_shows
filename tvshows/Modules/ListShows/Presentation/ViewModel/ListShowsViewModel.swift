@@ -56,6 +56,7 @@ final class ListShowsViewModel: IListShowsViewModel {
     
     // MARK: - Methods
     
+    @MainActor
     func loadData(currentShow: Show?) async {
         if currentShow == nil {
             await restartPagination()
