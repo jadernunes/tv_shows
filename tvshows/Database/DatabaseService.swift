@@ -14,7 +14,6 @@ protocol IDatabaseService {
     func loadAll<T: ObjectRepresentable>(type: T.Type) throws -> [T]
 }
 
-
 final class DatabaseService: IDatabaseService {
 
     // MARK: - Attributes
