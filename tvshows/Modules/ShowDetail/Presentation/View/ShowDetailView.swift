@@ -1,0 +1,216 @@
+//
+//  ShowDetailView.swift
+//  tvshows
+//
+//  Created by Jader Borba Nunes on 04/04/24.
+//
+
+import SwiftUI
+
+struct ShowDetailView<ViewModel: IShowDetailViewModel>: View {
+    
+    // MARK: - Properties
+    
+    @ObservedObject private var viewModel: ViewModel
+    
+    // MARK: - Life cycle
+    
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    var body: some View {
+        GeometryReader { geo in
+            
+            switch viewModel.state {
+            case .idle:
+                EmptyView()
+            case .error:
+                MessageRetryView(imageName: "error", message: Localize.string(key: "genericErrorMessage"))
+                    .onRetry {
+                        await viewModel.loadData()
+                    }
+            case .empty:
+                MessageRetryView(imageName: "noData", message: Localize.string(key: "noData"))
+                    .onRetry {
+                        await viewModel.loadData()
+                    }
+            case .loading:
+                LoaderView()
+            case let .ready(show, seasons):
+                successContent(show: show, seasons: seasons, screeSize: geo.size)
+            }
+        }
+        .padding(16)
+    }
+}
+
+// MARK: - Subview
+
+private extension ShowDetailView {
+    
+    @ViewBuilder
+    func successContent(show: Show, seasons: [Season], screeSize: CGSize) -> some View {
+        List {
+            VStack(alignment: .center) {
+                imageShow(image: show.image, width: screeSize.width, height: screeSize.width * 0.6)
+                Divider()
+                    .padding(.vertical, 16)
+                timeContentView(time: show.schedule?.time ?? "")
+                daysContentView(days: show.schedule?.days ?? [])
+                genresContentView(genres: show.genres ?? [])
+                summaryView(summary: show.summary?.stripHTML ?? "")
+            }
+            .frame(maxHeight: .infinity, alignment: .top)
+            .listRowSeparator(.hidden)
+            
+            ForEach(seasons, id: \.id) { season in
+                seasonView(season: season, screenWidth: screeSize.width)
+            }
+        }
+        .listStyle(.plain)
+        .scrollIndicators(.hidden)
+        .navigationTitle(show.name)
+    }
+    
+    @ViewBuilder
+    func seasonTitle(_ title: String) -> some View {
+        Text(Localize.string(key: "season") + " \(title)")
+            .font(Fonts.semibold16)
+            .foregroundStyle(Colors.StrongGray.swiftUI)
+    }
+    
+    @ViewBuilder
+    func seasonView(season: Season, screenWidth: CGFloat) -> some View {
+        Section(header: seasonTitle("\(season.id)")) {
+            ScrollView(.horizontal) {
+                LazyHStack {
+                    ForEach(season.episodes, id: \.id) { episode in
+                        episodeView(episode: episode, screenWidth: screenWidth)
+                            .padding(.horizontal, 4)
+                            .onTapGesture {
+                                viewModel.selectedEpisode = episode
+                            }
+                    }
+                }
+            }
+            
+        }
+        .listRowInsets(EdgeInsets())
+        .listRowSeparator(.hidden)
+    }
+    
+    @ViewBuilder
+    func episodeView(episode: Episode, screenWidth: CGFloat) -> some View {
+        VStack(alignment: .center) {
+            imageShow(image: episode.image, width: screenWidth * 0.3, height: screenWidth * 0.21)
+            Text("\(episode.number) - " + episode.name)
+                .lineLimit(1)
+                .font(Fonts.regular12)
+                .foregroundStyle(Colors.StrongGray.swiftUI)
+                .padding(.bottom, 2)
+                .padding(.horizontal, 2)
+                .frame(width: screenWidth * 0.3, alignment: .leading)
+        }
+        .frame(width: screenWidth * 0.32)
+        .padding(.bottom, 16)
+    }
+    
+    @ViewBuilder
+    func imageShow(image: ShowImage?, width: CGFloat, height: CGFloat) -> some View {
+        if let url = image?.original {
+            CacheAsyncImage(url: url) { phase in
+                switch phase {
+                case .empty:
+                    LoaderView(size: .regular)
+                        .cornerRadius(8)
+                        .frame(width: width, height: height)
+                case .success(let image):
+                    imageWithStyle(image: image, width: width, height:height)
+                case .failure:
+                    imageWithStyle(image: Images.NoImage.image, width: width, height:height)
+                        .padding(.vertical, 2)
+                @unknown default:
+                    EmptyView()
+                }
+            }
+        } else {
+            imageWithStyle(image: Images.NoImage.image, width: width, height:height)
+                .padding(.vertical, 2)
+        }
+    }
+    
+    func imageWithStyle(image: Image, width: CGFloat, height: CGFloat) -> some View {
+        image
+            .resizable()
+            .cornerRadius(8)
+            .aspectRatio(contentMode: .fit)
+            .frame(width: width, height: height)
+    }
+    
+    @ViewBuilder
+    func summaryView(summary: String) -> some View {
+        Text(Localize.string(key: "summary") + ":")
+            .font(Fonts.bold12)
+            .foregroundStyle(Colors.StrongGray.swiftUI)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.bottom, 8)
+        Text(summary)
+            .font(Fonts.regular12)
+            .foregroundStyle(Colors.StrongGray.swiftUI)
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 8)
+    }
+    
+    func timeContentView(time: String) -> some View {
+        HStack {
+            Text(Localize.string(key: "time") + ": ")
+                .font(Fonts.bold12)
+                .foregroundStyle(Colors.StrongGray.swiftUI)
+                .padding(.bottom, 8)
+            Text(time)
+                .font(Fonts.regular12)
+                .foregroundStyle(Colors.StrongGray.swiftUI)
+                .padding(.bottom, 8)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    @ViewBuilder
+    func daysContentView(days: [String]) -> some View {
+        let days = days.joined(separator: ", ")
+        HStack {
+            Text(Localize.string(key: "days") + ": ")
+                .font(Fonts.bold12)
+                .foregroundStyle(Colors.StrongGray.swiftUI)
+                .padding(.bottom, 8)
+            Text(days)
+                .font(Fonts.regular12)
+                .foregroundStyle(Colors.StrongGray.swiftUI)
+                .padding(.bottom, 8)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    @ViewBuilder
+    func genresContentView(genres: [String]) -> some View {
+        let days = genres.joined(separator: ", ")
+        HStack {
+            Text(Localize.string(key: "genres") + ": ")
+                .font(Fonts.bold12)
+                .foregroundStyle(Colors.StrongGray.swiftUI)
+                .padding(.bottom, 8)
+            Text(days)
+                .font(Fonts.regular12)
+                .foregroundStyle(Colors.StrongGray.swiftUI)
+                .padding(.bottom, 8)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    var showBoarder: some View {
+        RoundedRectangle(cornerRadius: 8)
+            .stroke(.black.opacity(0.1), lineWidth: 1)
+            .padding(.vertical, 7)
+    }
+}

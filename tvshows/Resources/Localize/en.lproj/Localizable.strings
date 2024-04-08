@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  tvshows
+
+  Created by Jader Borba Nunes on 03/04/24.
+  
+*/
+
+// MARK: - General
+
+"genericErrorMessage" = "Something went wrong";
+"error.noInternet" = "No internet";
+"listShows.title" = "Series";
+"language.title" = "Language";
+"notMentioned" = "Not mentioned";
+"retry" = "Retry";
+"noData" = "No data";
+"days" = "Days";
+"time" = "Time";
+"genres" = "Genres";
+"summary" = "Summary";
+"season" = "Season";
+"number" = "Number";
