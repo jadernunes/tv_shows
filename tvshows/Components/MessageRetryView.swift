@@ -40,7 +40,7 @@ struct MessageRetryView: View {
                 }
                 .frame(width: 100, height: 44)
                 .foregroundColor(Colors.CustomWhite.swiftUI)
-                .background(Colors.MediumBlue.swiftUI)
+                .background(Colors.StrongGray.swiftUI)
                 .cornerRadius(8)
                 .padding(.top, 30)
             }
