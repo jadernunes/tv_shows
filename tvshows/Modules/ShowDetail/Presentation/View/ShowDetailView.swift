@@ -88,6 +88,9 @@ private extension ShowDetailView {
                     ForEach(season.episodes, id: \.id) { episode in
                         episodeView(episode: episode, screenWidth: screenWidth)
                             .padding(.horizontal, 4)
+                            .onTapGesture {
+                                viewModel.selectedEpisode = episode
+                            }
                     }
                 }
             }
@@ -101,8 +104,7 @@ private extension ShowDetailView {
     func episodeView(episode: Episode, screenWidth: CGFloat) -> some View {
         VStack(alignment: .center) {
             imageShow(image: episode.image, width: screenWidth * 0.3, height: screenWidth * 0.21)
-                .overlay(showBoarder)
-            Text(episode.name)
+            Text("\(episode.number) - " + episode.name)
                 .lineLimit(1)
                 .font(Fonts.regular12)
                 .foregroundStyle(Colors.StrongGray.swiftUI)

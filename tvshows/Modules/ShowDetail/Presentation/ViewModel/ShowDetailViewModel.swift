@@ -5,23 +5,27 @@
 //  Created by Jader Borba Nunes on 04/04/24.
 //
 
+import Combine
 import SwiftUI
 
 protocol IShowDetailViewModel: ObservableObject {
     var state: ShowDetailState { get }
+    var selectedEpisode: Episode? { get set }
     
     func loadData() async
 }
 
 final class ShowDetailViewModel: IShowDetailViewModel {
     
-    @Published var state: ShowDetailState = .idle
-    
     // MARK: - Properties
+    
+    @Published var state: ShowDetailState = .idle
+    @Published var selectedEpisode: Episode?
     
     private let coordinator: IShowDetailCoordinator?
     private let service: IShowDetailService
     private let show: Show
+    private var cancelables = Set<AnyCancellable>()
     
     // MARK: - Life cycle
     
@@ -31,6 +35,8 @@ final class ShowDetailViewModel: IShowDetailViewModel {
         self.show = show
         self.coordinator = coordinator
         self.service = service
+        
+        bindSelectedEpisode()
     }
     
     // MARK: - Methods
@@ -63,24 +69,13 @@ final class ShowDetailViewModel: IShowDetailViewModel {
         
         state = .ready(show: show, seasons: seasons)
     }
-}
-
-struct Season: Equatable {
-    let id: Int
-    let episodes: [Episode]
-}
-
-enum ShowDetailState: Equatable {
-    case idle, error, loading, empty, ready(show: Show, seasons: [Season])
-
-    static func == (lhs: ShowDetailState, rhs: ShowDetailState) -> Bool {
-        switch (lhs, rhs) {
-        case (.idle, .idle), (.error, .error), (.loading, .loading), (.empty, .empty):
-            return true
-        case let (.ready(show1, seasons1), .ready(show2, seasons2)):
-            return seasons1 == seasons2 && show1 == show2
-        default:
-            return false
-        }
+    
+    private func bindSelectedEpisode() {
+        $selectedEpisode
+            .sink { [weak self] episode in
+                guard let episode else { return }
+                self?.coordinator?.showEpisodeDetail(episode: episode)
+            }
+            .store(in: &cancelables)
     }
 }
