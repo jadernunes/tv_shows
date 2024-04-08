@@ -39,8 +39,12 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
             EmptyView()
         }
     }
-    
-    private func loadContent(_ shows: [Show]) -> some View {
+}
+
+// MARK: - Sub views
+
+private extension ListShowsView {
+    func loadContent(_ shows: [Show]) -> some View {
         NavigationStack {
             GeometryReader { geo in
                 List {
@@ -68,7 +72,22 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
                 .refreshable {
                     await viewModel.loadData(currentShow: nil)
                 }
+                .onAppear {
+                    Task {
+                        viewModel.updateFavorites()
+                    }
+                }
                 .searchable(text: $viewModel.search)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: {
+                            viewModel.openFavorites()
+                        }) {
+                            Text(Localize.string(key: "favorites"))
+                                .foregroundStyle(Colors.StrongGray.swiftUI)
+                        }
+                    }
+                }
             }
         }
     }

@@ -71,6 +71,23 @@ private extension ShowDetailView {
         .listStyle(.plain)
         .scrollIndicators(.hidden)
         .navigationTitle(show.name)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    viewModel.updateFavorite()
+                }) {
+                    favoriteImage(show)
+                }
+            }
+        }
+    }
+    
+    func favoriteImage(_ show: Show) -> some View {
+        let image = show.isFavorite ? Images.FavoriteFull.image : Images.FavoriteEmpty.image
+        return image
+            .resizable()
+            .tint(Colors.StrongGray.swiftUI)
+            .frame(width: 20, height: 20)
     }
     
     @ViewBuilder
