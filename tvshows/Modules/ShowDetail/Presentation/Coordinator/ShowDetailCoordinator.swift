@@ -7,7 +7,9 @@
 
 import UIKit
 
-protocol IShowDetailCoordinator {}
+protocol IShowDetailCoordinator {
+    func showEpisodeDetail(episode: Episode)
+}
 
 final class ShowDetailCoordinator: IShowDetailCoordinator {
 
@@ -27,5 +29,12 @@ final class ShowDetailCoordinator: IShowDetailCoordinator {
         let viewModel = ShowDetailViewModel(show: show, coordinator: self)
         let viewController = ShowDetailViewController(viewModel: viewModel)
         presenter?.pushViewController(viewController, animated: true)
+    }
+    
+    func showEpisodeDetail(episode: Episode) {
+        guard let navigation = presenter else { return }
+        
+        let coodinator = EpisodeDetailCoordinator(presenter: navigation)
+        coodinator.start(episode: episode)
     }
 }

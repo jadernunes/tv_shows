@@ -13,4 +13,9 @@ struct Images {
         static let uiImage = UIImage(named: "noImage") ?? .no
         static let image = Image(uiImage: uiImage)
     }
+    
+    struct Close {
+        static let uiImage = UIImage(named: "close") ?? .no
+        static let image = Image(uiImage: uiImage)
+    }
 }

@@ -16,7 +16,6 @@ protocol IListShowsViewModel: ObservableObject {
 
     func shouldShowLoadMore(currentShow: Show) -> Bool
     func loadData(currentShow: Show?) async
-    func presentDetail(show: Show)
 }
 
 final class ListShowsViewModel: IListShowsViewModel {
