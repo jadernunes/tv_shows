@@ -18,4 +18,14 @@ struct Images {
         static let uiImage = UIImage(named: "close") ?? .no
         static let image = Image(uiImage: uiImage)
     }
+    
+    struct FavoriteFull {
+        static let uiImage = UIImage(named: "favoriteFull") ?? .no
+        static let image = Image(uiImage: uiImage)
+    }
+    
+    struct FavoriteEmpty {
+        static let uiImage = UIImage(named: "favoriteEmpty") ?? .no
+        static let image = Image(uiImage: uiImage)
+    }
 }

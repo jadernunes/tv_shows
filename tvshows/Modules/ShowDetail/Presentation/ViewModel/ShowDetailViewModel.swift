@@ -13,6 +13,7 @@ protocol IShowDetailViewModel: ObservableObject {
     var selectedEpisode: Episode? { get set }
     
     func loadData() async
+    func updateFavorite()
 }
 
 final class ShowDetailViewModel: IShowDetailViewModel {
@@ -24,17 +25,21 @@ final class ShowDetailViewModel: IShowDetailViewModel {
     
     private let coordinator: IShowDetailCoordinator?
     private let service: IShowDetailService
-    private let show: Show
+    private let favoriteService: IFavoriteService
+    private var show: Show
+    private var episodesDTO: [EpisodeDTO] = []
     private var cancelables = Set<AnyCancellable>()
     
     // MARK: - Life cycle
     
     init(show: Show,
          coordinator: IShowDetailCoordinator? = nil,
-         service: IShowDetailService = ShowDetailService()) {
+         service: IShowDetailService = ShowDetailService(),
+         favoriteService: IFavoriteService = FavoriteService()) {
         self.show = show
         self.coordinator = coordinator
         self.service = service
+        self.favoriteService = favoriteService
         
         bindSelectedEpisode()
     }
@@ -46,14 +51,27 @@ final class ShowDetailViewModel: IShowDetailViewModel {
         state = .loading
         
         do {
-            let episodesDTO = try await service.loadEpisodes(showID: show.id)
-            setUpSeasons(episodes: episodesDTO.map { $0.asEpisode })
+            episodesDTO = try await service.loadEpisodes(showID: show.id)
+            setUpSeasons()
         } catch {
             state = .error
         }
     }
     
-    private func setUpSeasons(episodes: [Episode]) {
+    func updateFavorite() {
+        if show.isFavorite {
+            favoriteService.remove(id: show.id)
+            show.isFavorite = false
+        } else {
+            favoriteService.add(model: ShowDTO(show: show))
+            show.isFavorite = true
+        }
+        
+        setUpSeasons()
+    }
+    
+    private func setUpSeasons() {
+        let episodes = episodesDTO.map { $0.asEpisode }
         let seasons = episodes.reduce(into: [Int: [Episode]]()) { result, episode in
             let seasonID = episode.season
             

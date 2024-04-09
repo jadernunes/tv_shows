@@ -9,6 +9,7 @@ import UIKit
 
 protocol IListShowsCoordinator {
     func presentDetails(show: Show)
+    func presentFavorites()
 }
 
 final class ListShowsCoordinator: IListShowsCoordinator {
@@ -36,5 +37,12 @@ final class ListShowsCoordinator: IListShowsCoordinator {
         
         let coordinator = ShowDetailCoordinator(presenter: navigation)
         coordinator.start(show: show)
+    }
+    
+    func presentFavorites() {
+        guard let navigation = presenter else { return }
+        
+        let coordinator = FavoritesCoordinator(presenter: navigation)
+        coordinator.start()
     }
 }
