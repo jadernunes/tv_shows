@@ -1,13 +1,13 @@
 //
-//  ListShowsView.swift
+//  FavoritesView.swift
 //  tvshows
 //
-//  Created by Jader Borba Nunes on 03/04/24.
+//  Created by Jader Borba Nunes on 08/04/24.
 //
 
 import SwiftUI
 
-struct ListShowsView<ViewModel: IListShowsViewModel>: View {
+struct FavoritesView<ViewModel: IFavoritesViewModel>: View {
     
     // MARK: - Properties
     
@@ -24,14 +24,14 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
         case .empty:
             MessageRetryView(imageName: "noData", message: Localize.string(key: "noData"))
                 .onRetry {
-                    await viewModel.loadData(currentShow: nil)
+                    await viewModel.loadData()
                 }
         case .loading:
             LoaderView()
         case .error:
             MessageRetryView(imageName: "error", message: Localize.string(key: "genericErrorMessage"))
                 .onRetry {
-                    await viewModel.loadData(currentShow: nil)
+                    await viewModel.loadData()
                 }
         case let .ready(shows):
             loadContent(shows)
@@ -43,7 +43,7 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
 
 // MARK: - Sub views
 
-private extension ListShowsView {
+private extension FavoritesView {
     func loadContent(_ shows: [Show]) -> some View {
         NavigationStack {
             GeometryReader { geo in
@@ -56,38 +56,27 @@ private extension ListShowsView {
                         .onTapGesture {
                             viewModel.selectedShow = show
                         }
-                        .task {
-                            await viewModel.loadData(currentShow: show)
-                        }
-                        
-                        if viewModel.shouldShowLoadMore(currentShow: show) {
-                            LoaderView()
+                    }
+                    .onDelete { index in
+                        if let index = index.first {
+                            Task {
+                                await viewModel.delete(index: index)
+                            }
                         }
                     }
-                }
-                .navigationTitle(Localize.string(key: "listShows.title"))
-                .navigationBarTitleDisplayMode(.inline)
-                .listStyle(.plain)
-                .frame(maxWidth: .infinity)
-                .refreshable {
-                    await viewModel.loadData(currentShow: nil)
                 }
                 .onAppear {
                     Task {
-                        viewModel.updateFavorites()
+                        await viewModel.loadData()
                     }
                 }
-                .searchable(text: $viewModel.search)
                 .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button(action: {
-                            viewModel.openFavorites()
-                        }) {
-                            Text(Localize.string(key: "favorites"))
-                                .foregroundStyle(Colors.StrongGray.swiftUI)
-                        }
-                    }
+                    EditButton().foregroundStyle(Colors.StrongGray.swiftUI)
                 }
+                .navigationTitle(Localize.string(key: "favorites"))
+                .navigationBarTitleDisplayMode(.inline)
+                .listStyle(.plain)
+                .frame(maxWidth: .infinity)
             }
         }
     }

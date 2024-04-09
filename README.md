@@ -40,6 +40,9 @@ Following the same concept we created a components that could be used everywhere
 * Search serie.
 * Episode list.
 * Episode detail.
+* List of favorites.
+* Add serie as a favorite.
+* Remove a favorite.
 
 #### Components
 * Error.
@@ -79,3 +82,11 @@ Following the same concept we created a components that could be used everywhere
 | Error state | Empty state | Loaders |
 | ------------- | ------------- | ------------- |
 | ![iPhone7](/screenshots/image7.png?raw=true) | ![iPhone8](/screenshots/image8.png?raw=true) | ![iPhone9](/screenshots/image9.png?raw=true) |
+
+| Home | Serie unfavorited | Serie favorited |
+| - | - | - |
+| ![iPhone10](/screenshots/image10.png?raw=true) | ![iPhone11](/screenshots/image11.png?raw=true) | ![iPhone12](/screenshots/image12.png?raw=true) |
+
+| Favorite list | Delete state 1 | Delete state 2 |
+| - | - | - |
+| ![iPhone13](/screenshots/image13.png?raw=true) | ![iPhone14](/screenshots/image14.png?raw=true) | ![iPhone15](/screenshots/image15.png?raw=true) |

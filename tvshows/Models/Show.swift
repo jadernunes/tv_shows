@@ -15,5 +15,7 @@ struct Show: Equatable {
     let summary: String?
     let schedule: Schedule?
     let genres: [String]?
+    
+    var isFavorite: Bool = false
 }
 

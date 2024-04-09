@@ -16,6 +16,8 @@ protocol IListShowsViewModel: ObservableObject {
 
     func shouldShowLoadMore(currentShow: Show) -> Bool
     func loadData(currentShow: Show?) async
+    func openFavorites()
+    func updateFavorites()
 }
 
 final class ListShowsViewModel: IListShowsViewModel {
@@ -28,6 +30,7 @@ final class ListShowsViewModel: IListShowsViewModel {
     
     private let coordinator: IListShowsCoordinator?
     private let service: IListShowsService
+    private let favoriteService: IFavoriteService
     private var shows = [Show]()
     private var searchedText: String = ""
     private var cancelables = Set<AnyCancellable>()
@@ -45,9 +48,11 @@ final class ListShowsViewModel: IListShowsViewModel {
     // MARK: - Life cycle
     
     init(coordinator: IListShowsCoordinator? = nil,
-         service: IListShowsService = ListShowsService()) {
+         service: IListShowsService = ListShowsService(),
+         favoriteService: IFavoriteService = FavoriteService()) {
         self.coordinator = coordinator
         self.service = service
+        self.favoriteService = favoriteService
         
         bindSearchText()
         bindSelectedShow()
@@ -85,6 +90,20 @@ final class ListShowsViewModel: IListShowsViewModel {
         coordinator?.presentDetails(show: show)
     }
     
+    func openFavorites() {
+        coordinator?.presentFavorites()
+    }
+    
+    func updateFavorites() {
+        let allFavorites = favoriteService.loadAll()
+        shows = shows.map { show in
+            var show = show
+            show.isFavorite = allFavorites.contains(where: { $0.id == show.id })
+            return show
+        }
+        state = .ready(shows: shows)
+    }
+    
     @MainActor
     private func restartPagination() async {
         page = 0
@@ -99,6 +118,7 @@ final class ListShowsViewModel: IListShowsViewModel {
         }
         
         do {
+            let allFavorites = favoriteService.loadAll()
             let data = try await service.loadAll(page: page)
             let isListEmpty = data.isEmpty
             hasLoadedAll = isListEmpty
@@ -111,7 +131,11 @@ final class ListShowsViewModel: IListShowsViewModel {
                 state = .empty
             }
             
-            shows.append(contentsOf: data.map { $0.asShow })
+            shows.append(contentsOf: data.map { showDTO in
+                var asShow = showDTO.asShow
+                asShow.isFavorite = allFavorites.contains(where: { $0.id == showDTO.id })
+                return asShow
+            })
             state = .ready(shows: shows)
         } catch {
             state = .error
@@ -125,6 +149,7 @@ final class ListShowsViewModel: IListShowsViewModel {
         }
         
         do {
+            let allFavorites = favoriteService.loadAll()
             let data = try await service.search(text: searchedText)
             let isListEmpty = data.isEmpty
             hasLoadedAll = isListEmpty
@@ -137,7 +162,11 @@ final class ListShowsViewModel: IListShowsViewModel {
                 state = .empty
             }
             
-            shows.append(contentsOf: data.map { $0.asShow })
+            shows.append(contentsOf: data.map { showDTO in
+                var asShow = showDTO.asShow
+                asShow.isFavorite = allFavorites.contains(where: { $0.id == showDTO.id })
+                return asShow
+            })
             state = .ready(shows: shows)
         } catch {
             state = .error
