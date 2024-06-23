@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Jader Nunes on 21/06/24.
+  
+*/
+
+"error.generic" = "Something went wrong";
+"error.noInternet" = "No internet";
