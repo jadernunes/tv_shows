@@ -2,9 +2,13 @@
   "configurations" : [
     {
       "id" : "4FF5DB40-88DA-417B-8DDA-A3D8E69EB290",
-      "name" : "Configuration 1",
+      "name" : "Configuration",
       "options" : {
-
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:tvshows.xcodeproj",
+          "identifier" : "3E27CFB22BBE22AD00726AB6",
+          "name" : "tvshows"
+        }
       }
     }
   ],
