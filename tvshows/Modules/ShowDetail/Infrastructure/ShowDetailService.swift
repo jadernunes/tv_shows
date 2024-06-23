@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkSession
 
 protocol IShowDetailService {
     func loadEpisodes(showID: Int) async throws -> [EpisodeDTO]
