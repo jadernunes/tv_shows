@@ -7,6 +7,7 @@
 
 import Combine
 import SwiftUI
+import NetworkSession
 
 protocol IShowDetailViewModel: ObservableObject {
     var state: ShowDetailState { get }
@@ -53,8 +54,10 @@ final class ShowDetailViewModel: IShowDetailViewModel {
         do {
             episodesDTO = try await service.loadEpisodes(showID: show.id)
             setUpSeasons()
+        } catch let error as NetworkErrorType {
+            state = .error(message: error.message)
         } catch {
-            state = .error
+            state = .error(message: error.localizedDescription)
         }
     }
     

@@ -8,7 +8,7 @@
 import Foundation
 
 enum ListShowsState: Equatable {
-    case idle, error, loading, empty, ready(shows: [Show])
+    case idle, error(message: String), loading, empty, ready(shows: [Show])
 
     static func == (lhs: ListShowsState, rhs: ListShowsState) -> Bool {
         switch (lhs, rhs) {
