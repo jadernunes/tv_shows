@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import NetworkSession
 @testable import tvshows
 
 final class HTTPMethodTypeTests: XCTestCase {

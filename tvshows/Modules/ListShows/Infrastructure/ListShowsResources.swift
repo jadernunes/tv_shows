@@ -5,6 +5,8 @@
 //  Created by Jader Borba Nunes on 03/04/24.
 //
 
+import NetworkSession
+
 enum ListShowsResources {
     case loadAll(page: Int)
     case search(text: String)
