@@ -1,13 +1,12 @@
 //
 //  HTTPMethodTypeTests.swift
-//  tvshowsTests
+//  
 //
-//  Created by Jader Borba Nunes on 07/04/24.
+//  Created by Jader Nunes on 23/06/24.
 //
 
 import XCTest
-import NetworkSession
-@testable import tvshows
+@testable import NetworkSession
 
 final class HTTPMethodTypeTests: XCTestCase {
     
