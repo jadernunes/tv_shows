@@ -7,10 +7,13 @@
 
 import Combine
 import SwiftUI
+import Localization
 
 struct MessageRetryView: View {
     
     // MARK: - Properties
+    
+    typealias Strings = MessageRetryViewStrings
     
     private let imageName: String
     private let message: String
@@ -33,7 +36,7 @@ struct MessageRetryView: View {
                     .frame(width: geo.size.width * 0.5, height: geo.size.width * 0.5)
                 Text(message)
                     .font(Fonts.semibold16)
-                Button(Localize.string(key: "retry")) {
+                Button(Strings.retry.localized()) {
                     Task {
                         await onRetry()
                     }

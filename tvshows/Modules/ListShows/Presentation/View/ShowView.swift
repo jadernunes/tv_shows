@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Localization
 
 struct ShowView: View {
     
     // MARK: - Properties
+    
+    typealias Strings = ListShowsStrings
     
     private let data: Show
     private let imageSize: CGFloat
@@ -91,7 +94,7 @@ private extension ShowView {
     @ViewBuilder
     var languageView: some View {
         HStack {
-            Text(Localize.string(key: "language.title") + ": ")
+            Text(Strings.languageTitle.localized() + ": ")
                 .font(Fonts.bold12)
                 .foregroundStyle(Colors.MediumGray.swiftUI)
             Text(languageText)
@@ -103,7 +106,7 @@ private extension ShowView {
     
     var languageText: String {
         guard let language = data.language else {
-            return Localize.string(key: "notMentioned")
+            return Strings.notMentioned.localized()
         }
         
         return language

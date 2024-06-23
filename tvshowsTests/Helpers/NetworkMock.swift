@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkSession
 @testable import tvshows
 
 final class NetworkMock: INetwork {

@@ -24,7 +24,8 @@ final class ListShowsServiceTests: XCTestCase {
             schedule: ScheduleDTO(
                 time: "1:00",
                 days: ["Monday"]),
-            genres: ["Male"])
+            genres: ["Male"],
+            isFavorite: false)
         
         let network = NetworkMock(data: [dto])
         let service = ListShowsService(network: network)

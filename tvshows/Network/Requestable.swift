@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkSession
 
 protocol Requestable: URLConvertible {
     var method: HTTPMethodType { get }

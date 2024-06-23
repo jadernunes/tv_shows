@@ -24,7 +24,8 @@ final class ShowDetailViewModelTests: XCTestCase {
             schedule: ScheduleDTO(
                 time: "1:00",
                 days: ["Monday"]),
-            genres: ["Male"])
+            genres: ["Male"],
+            isFavorite: false)
         
         let episodeDTO = EpisodeDTO(
             id: 1,

@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import SwiftUI
+import NetworkSession
 
 protocol IListShowsViewModel: ObservableObject {
     var state: ListShowsState { get }
@@ -68,9 +69,12 @@ final class ListShowsViewModel: IListShowsViewModel {
         
         let isCurrentShowEqualToLast = currentShow == shows.last
         
-        guard isCurrentShowEqualToLast &&
-                hasLoadedAll == false ||
-                state == .error else {
+        var canRequest: Bool = hasLoadedAll == false
+        if case .error = state {
+            canRequest = true
+        }
+        
+        guard isCurrentShowEqualToLast && canRequest else {
             return
         }
         
@@ -137,8 +141,10 @@ final class ListShowsViewModel: IListShowsViewModel {
                 return asShow
             })
             state = .ready(shows: shows)
+        } catch let error as NetworkErrorType {
+            state = .error(message: error.message)
         } catch {
-            state = .error
+            state = .error(message: error.localizedDescription)
         }
     }
     
@@ -168,8 +174,10 @@ final class ListShowsViewModel: IListShowsViewModel {
                 return asShow
             })
             state = .ready(shows: shows)
+        }  catch let error as NetworkErrorType {
+            state = .error(message: error.message)
         } catch {
-            state = .error
+            state = .error(message: error.localizedDescription)
         }
     }
     

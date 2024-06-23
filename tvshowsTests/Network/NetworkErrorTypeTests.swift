@@ -6,18 +6,13 @@
 //
 
 import XCTest
+import NetworkSession
 @testable import tvshows
 
 final class NetworkErrorTypeTests: XCTestCase {
     
     func testErrorTypeRequest() {
-        let error: NetworkErrorType = .noInternet(message: "aaa")
-        
-        switch error {
-        case let .noInternet(message):
-            XCTAssertEqual(message, "aaa")
-        default:
-            XCTFail()
-        }
+        let error: NetworkErrorType = .noInternet
+        XCTAssertEqual(error.message, "No internet")
     }
 }

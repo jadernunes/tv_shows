@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import NetworkSession
 
 enum HTTPMethodType: String, CaseIterable {
     case get = "GET"
@@ -25,7 +26,7 @@ extension NetworkSession: INetwork {
         try await withCheckedThrowingContinuation { continuation in
             guard let isReachable = ReachabilityManager.default?.isReachable, isReachable
             else {
-                continuation.resume(with: .failure(NetworkErrorType.noInternet()))
+                continuation.resume(with: .failure(NetworkErrorType.noInternet))
                 return
             }
             

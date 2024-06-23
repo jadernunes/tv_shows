@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Localization
 
 struct FavoritesView<ViewModel: IFavoritesViewModel>: View {
     
     // MARK: - Properties
+    
+    typealias Strings = FavoritesStrings
     
     @ObservedObject private var viewModel: ViewModel
 
@@ -22,14 +25,14 @@ struct FavoritesView<ViewModel: IFavoritesViewModel>: View {
     var body: some View {
         switch viewModel.state {
         case .empty:
-            MessageRetryView(imageName: "noData", message: Localize.string(key: "noData"))
+            MessageRetryView(imageName: "noData", message: GeneralStrings.noData.localized())
                 .onRetry {
                     await viewModel.loadData()
                 }
         case .loading:
             LoaderView()
-        case .error:
-            MessageRetryView(imageName: "error", message: Localize.string(key: "genericErrorMessage"))
+        case let .error(message):
+            MessageRetryView(imageName: "error", message: message)
                 .onRetry {
                     await viewModel.loadData()
                 }
@@ -73,7 +76,7 @@ private extension FavoritesView {
                 .toolbar {
                     EditButton().foregroundStyle(Colors.StrongGray.swiftUI)
                 }
-                .navigationTitle(Localize.string(key: "favorites"))
+                .navigationTitle(Strings.title.localized())
                 .navigationBarTitleDisplayMode(.inline)
                 .listStyle(.plain)
                 .frame(maxWidth: .infinity)
