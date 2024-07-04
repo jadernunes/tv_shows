@@ -5,6 +5,8 @@
 //  Created by Jader Borba Nunes on 04/04/24.
 //
 
+import NetworkSession
+
 enum ShowDetailResources {
     case loadEpisodes(showID: Int)
 }

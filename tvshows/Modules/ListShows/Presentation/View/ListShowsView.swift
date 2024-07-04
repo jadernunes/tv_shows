@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Localization
 
 struct ListShowsView<ViewModel: IListShowsViewModel>: View {
     
     // MARK: - Properties
+    
+    typealias Strings = ListShowsStrings
     
     @ObservedObject private var viewModel: ViewModel
 
@@ -22,14 +25,14 @@ struct ListShowsView<ViewModel: IListShowsViewModel>: View {
     var body: some View {
         switch viewModel.state {
         case .empty:
-            MessageRetryView(imageName: "noData", message: Localize.string(key: "noData"))
+            MessageRetryView(imageName: "noData", message: GeneralStrings.noData.localized())
                 .onRetry {
                     await viewModel.loadData(currentShow: nil)
                 }
         case .loading:
             LoaderView()
-        case .error:
-            MessageRetryView(imageName: "error", message: Localize.string(key: "genericErrorMessage"))
+        case let .error(message):
+            MessageRetryView(imageName: "error", message: message)
                 .onRetry {
                     await viewModel.loadData(currentShow: nil)
                 }
@@ -65,7 +68,7 @@ private extension ListShowsView {
                         }
                     }
                 }
-                .navigationTitle(Localize.string(key: "listShows.title"))
+                .navigationTitle(Strings.title.localized())
                 .navigationBarTitleDisplayMode(.inline)
                 .listStyle(.plain)
                 .frame(maxWidth: .infinity)
@@ -83,7 +86,7 @@ private extension ListShowsView {
                         Button(action: {
                             viewModel.openFavorites()
                         }) {
-                            Text(Localize.string(key: "favorites"))
+                            Text(FavoritesStrings.title.localized())
                                 .foregroundStyle(Colors.StrongGray.swiftUI)
                         }
                     }

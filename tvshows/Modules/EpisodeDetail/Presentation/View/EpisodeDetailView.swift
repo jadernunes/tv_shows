@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Localization
 
 struct EpisodeDetailView<ViewModel: IEpisodeDetailViewModel>: View {
     
     // MARK: - Properties
+    
+    typealias Strings = EpisodeDetailStrings
     
     @ObservedObject private var viewModel: ViewModel
     
@@ -31,8 +34,8 @@ struct EpisodeDetailView<ViewModel: IEpisodeDetailViewModel>: View {
                         Divider()
                             .padding(.vertical, 16)
                         
-                        detailItemView(title: Localize.string(key: "number"), content: "\(viewModel.episode.number)")
-                        detailItemView(title: Localize.string(key: "season"), content: "\(viewModel.episode.season)")
+                        detailItemView(title: Strings.number.localized(), content: "\(viewModel.episode.number)")
+                        detailItemView(title: Strings.season.localized(), content: "\(viewModel.episode.season)")
                         summaryView(summary: viewModel.episode.summary?.stripHTML ?? "")
                     }
                     .frame(maxHeight: .infinity, alignment: .top)
@@ -107,7 +110,7 @@ private extension EpisodeDetailView {
     
     @ViewBuilder
     func summaryView(summary: String) -> some View {
-        Text(Localize.string(key: "summary") + ":")
+        Text(Strings.summary.localized() + ":")
             .font(Fonts.bold12)
             .foregroundStyle(Colors.StrongGray.swiftUI)
             .frame(maxWidth: .infinity, alignment: .leading)

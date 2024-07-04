@@ -6,7 +6,7 @@
 //
 
 enum ShowDetailState: Equatable {
-    case idle, error, loading, empty, ready(show: Show, seasons: [Season])
+    case idle, error(message: String), loading, empty, ready(show: Show, seasons: [Season])
 
     static func == (lhs: ShowDetailState, rhs: ShowDetailState) -> Bool {
         switch (lhs, rhs) {

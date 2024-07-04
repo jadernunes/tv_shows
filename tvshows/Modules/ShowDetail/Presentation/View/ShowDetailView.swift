@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Localization
 
 struct ShowDetailView<ViewModel: IShowDetailViewModel>: View {
     
     // MARK: - Properties
+    
+    typealias Strings = ShowDetailStrings
     
     @ObservedObject private var viewModel: ViewModel
     
@@ -25,13 +28,13 @@ struct ShowDetailView<ViewModel: IShowDetailViewModel>: View {
             switch viewModel.state {
             case .idle:
                 EmptyView()
-            case .error:
-                MessageRetryView(imageName: "error", message: Localize.string(key: "genericErrorMessage"))
+            case let .error(message):
+                MessageRetryView(imageName: "error", message: message)
                     .onRetry {
                         await viewModel.loadData()
                     }
             case .empty:
-                MessageRetryView(imageName: "noData", message: Localize.string(key: "noData"))
+                MessageRetryView(imageName: "noData", message: GeneralStrings.noData.localized())
                     .onRetry {
                         await viewModel.loadData()
                     }
@@ -92,7 +95,7 @@ private extension ShowDetailView {
     
     @ViewBuilder
     func seasonTitle(_ title: String) -> some View {
-        Text(Localize.string(key: "season") + " \(title)")
+        Text(EpisodeDetailStrings.season.localized() + " \(title)")
             .font(Fonts.semibold16)
             .foregroundStyle(Colors.StrongGray.swiftUI)
     }
@@ -167,7 +170,7 @@ private extension ShowDetailView {
     
     @ViewBuilder
     func summaryView(summary: String) -> some View {
-        Text(Localize.string(key: "summary") + ":")
+        Text(EpisodeDetailStrings.summary.localized() + ":")
             .font(Fonts.bold12)
             .foregroundStyle(Colors.StrongGray.swiftUI)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -181,7 +184,7 @@ private extension ShowDetailView {
     
     func timeContentView(time: String) -> some View {
         HStack {
-            Text(Localize.string(key: "time") + ": ")
+            Text(Strings.time.localized() + ": ")
                 .font(Fonts.bold12)
                 .foregroundStyle(Colors.StrongGray.swiftUI)
                 .padding(.bottom, 8)
@@ -197,7 +200,7 @@ private extension ShowDetailView {
     func daysContentView(days: [String]) -> some View {
         let days = days.joined(separator: ", ")
         HStack {
-            Text(Localize.string(key: "days") + ": ")
+            Text(Strings.days.localized() + ": ")
                 .font(Fonts.bold12)
                 .foregroundStyle(Colors.StrongGray.swiftUI)
                 .padding(.bottom, 8)
@@ -213,7 +216,7 @@ private extension ShowDetailView {
     func genresContentView(genres: [String]) -> some View {
         let days = genres.joined(separator: ", ")
         HStack {
-            Text(Localize.string(key: "genres") + ": ")
+            Text(Strings.genres.localized() + ": ")
                 .font(Fonts.bold12)
                 .foregroundStyle(Colors.StrongGray.swiftUI)
                 .padding(.bottom, 8)

@@ -1,31 +1,30 @@
 //
 //  NetworkSession.swift
-//  tvshows
 //
-//  Created by Jader Borba Nunes on 03/04/24.
+//  Created by Jader Nunes on 23/06/24.
 //
 
 import Foundation
 import Alamofire
 
-enum HTTPMethodType: String, CaseIterable {
+public enum HTTPMethodType: String, CaseIterable {
     case get = "GET"
     case post = "POST"
     case patch = "PATCH"
     case delete = "DELETE"
 }
 
-protocol INetwork {
+public protocol INetwork {
     func makeRequest<T: Decodable>(requester: Requestable) async throws -> T
 }
 
 extension NetworkSession: INetwork {
     
-    func makeRequest<T: Decodable>(requester: Requestable) async throws -> T {
+    public func makeRequest<T: Decodable>(requester: Requestable) async throws -> T {
         try await withCheckedThrowingContinuation { continuation in
             guard let isReachable = ReachabilityManager.default?.isReachable, isReachable
             else {
-                continuation.resume(with: .failure(NetworkErrorType.noInternet()))
+                continuation.resume(with: .failure(NetworkErrorType.noInternet))
                 return
             }
             

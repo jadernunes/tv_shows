@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkSession
 
 protocol IListShowsService {
     func loadAll(page: Int) async throws -> [ShowDTO]
