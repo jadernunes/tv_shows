@@ -1,7 +1,6 @@
 //
 //  NetworkErrorType.swift
 //
-//
 //  Created by Jader Nunes on 22/06/24.
 //
 

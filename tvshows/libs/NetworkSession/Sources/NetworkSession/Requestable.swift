@@ -1,14 +1,12 @@
 //
 //  Requestable.swift
-//  tvshows
 //
-//  Created by Jader Borba Nunes on 03/04/24.
+//  Created by Jader Nunes on 23/06/24.
 //
 
 import Foundation
-import NetworkSession
 
-protocol Requestable: URLConvertible {
+public protocol Requestable: URLConvertible {
     var method: HTTPMethodType { get }
     var parameters: Params? { get }
     var path: String { get }
@@ -17,7 +15,7 @@ protocol Requestable: URLConvertible {
     func asURLRequest() throws -> URLRequest
 }
 
-extension Requestable {
+public extension Requestable {
 
     // MARK: - Properties
 
@@ -27,7 +25,7 @@ extension Requestable {
     // MARK: - Methods
 
     func asURLRequest() throws -> URLRequest {
-        guard let url = URL(string: Config.baseURL) else {
+        guard let url = URL(string: "TEST") else {
             throw NetworkErrorType.missingURL
         }
 

@@ -10,6 +10,10 @@ import XCTest
 
 final class LocalizationTests: XCTestCase {
     func testExample() throws {
-        // TODO: Created unit tests
+        enum EnumString: String, LocalizableString {
+            case test = "test"
+        }
+        
+        XCTAssertEqual(EnumString.test.localized(bundle: .module), "Test1")
     }
 }

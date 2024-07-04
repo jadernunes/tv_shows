@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Localization",
+    defaultLocalization: "en",
     products: [
         .library(
             name: "Localization",
@@ -15,6 +16,9 @@ let package = Package(
             name: "Localization"),
         .testTarget(
             name: "LocalizationTests",
-            dependencies: ["Localization"]),
+            dependencies: ["Localization"],
+            resources: [
+                .process("Localizable.strings")
+            ]),
     ]
 )
